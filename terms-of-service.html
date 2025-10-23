@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Photios AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D0D0F; /* Deep Dark Background */
+            color: #E2E2E2; /* Soft Off-White Text */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+            opacity: 0.025; z-index: -2; pointer-events: none;
+        }
+        .aurora-container {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1; overflow: hidden; filter: blur(80px) brightness(0.6);
+        }
+        .aurora-shape { position: absolute; border-radius: 50%; opacity: 0.4; }
+        .aurora-1 { width: 50vw; height: 50vw; background: radial-gradient(circle, #0052D4, transparent 60%); top: 10vh; left: 10vw; animation: move-aurora-1 25s ease-in-out infinite alternate; }
+        .aurora-2 { width: 40vw; height: 40vw; background: radial-gradient(circle, #4364F7, transparent 60%); bottom: 5vh; right: 5vw; animation: move-aurora-2 30s ease-in-out infinite alternate; }
+        @keyframes move-aurora-1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(20vw, 15vh) scale(1.2); } }
+        @keyframes move-aurora-2 { from { transform: translate(0, 0) scale(1); } to { transform: translate(-15vw, -10vh) scale(0.8); } }
+        
+        .primary-cta {
+            background-color: #2E78F3;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .primary-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px rgba(46, 120, 243, 0.5), 0 0 10px rgba(46, 120, 243, 0.3);
+        }
+
+        header {
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        header.scrolled {
+            background-color: rgba(13, 13, 15, 0.75);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .legal-content h2 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; color: #f3f4f6; margin-top: 2rem; margin-bottom: 1rem; }
+        .legal-content h3 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; color: #e5e7eb; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .legal-content p, .legal-content li { color: #9ca3af; margin-bottom: 1rem; line-height: 1.75; }
+        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; }
+        .legal-content strong { color: #d1d5db; font-weight: 600; }
+        .legal-content a { color: #60a5fa; text-decoration: underline; }
+        .legal-content a:hover { color: #93c5fd; }
+    </style>
+</head>
+<body class="antialiased text-base">
+
+    <div class="aurora-container">
+        <div class="aurora-shape aurora-1"></div>
+        <div class="aurora-shape aurora-2"></div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 border-b">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+<a href="Website.html" class="flex items-center space-x-3">
+    <img src="logo.svg" alt="Photios AI Logo" class="h-8 w-auto">
+</a>            <a href="book-discovery-call.html" class="primary-cta text-white font-semibold px-5 py-2 rounded-full">
+                Book Discovery Call
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-32 md:py-40">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto legal-content">
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tighter text-gray-50 mb-4">Terms of Service</h1>
+                    <p class="text-gray-500">Last updated: October 1, 2025</p>
+
+                    <p>This document contains terms and conditions (“Terms of Use”) as an electronic record pursuant to the provisions of the Information Technology Act, 2000, (“IT Act”), and rules made thereunder. Further, this electronic record is generated by a computer system and does not require any physical or digital signatures. This electronic record is published in accordance with the relevant provisions of the IT Act and rules made thereunder.</p>
+
+                    <h2>1. WEBSITE</h2>
+                    <p><strong>1.1.</strong> Please note that the website having the domain name photios.ai (the “Website”), is owned, managed and operated by Talaura Technologies Private Limited, a company incorporated under laws of Republic of India, having its registered office at D- 141, DLF Crest, Golf Course Rd, DLF Ph 5, Galleria DLF-IV, Gurgaon, Galleria Dlf-iv, Haryana, India, 122009 (hereinafter collectively referred to as “We”, “Company”, “Us”, or “Our”).</p>
+                    
+                    <h2>2. GENERAL TERMS</h2>
+                    <p><strong>2.1.</strong> For the purpose of these Terms of Use hereinabove, wherever the context so requires, the terms “You”, “you”, “Your”, “your”, or “User”, shall mean and include, any person who visits, browses, uses or accesses the Website, avails any of the Services (as defined below) of the Website, or any person who registers himself/herself on the Website by creating an Account (as defined below) on the Website.</p>
+                    <p><strong>2.2.</strong> We provide certain services relating to: (i) presenting slides, media, documents, and customized feeds with the hybridization of virtual and live elements on any video communication software, video conferencing, web conferencing, meeting room, screensharing, cloud storage and other collaborative services offered through a software application which the User can order and download through the Website (“Product”); and (ii) accessing video conferencing and web conferencing through the Platform, in accordance with the terms and conditions as contained herein. This Terms of Use govern your use of the Website, Product and other services and features provided by us using the Website and the Product (“Services”).</p>
+                    <p><strong>2.3.</strong> You are requested to read these Terms of Use carefully before accepting the same and moving forward to using and accessing the Website or availing any Service.</p>
+                    <p><strong>2.4.</strong> By availing the Service(s) on the Website, and/or visiting, viewing, accessing or otherwise using the Service(s), and/or the Product or information created, collected, compiled or submitted to the Website, you are deemed to have agreed to these Terms of Use and all the policies of the Company/Website.</p>
+                    <p><strong>2.5. IN CASE YOU DO NOT AGREE WITH THESE TERMS OF USE, THEN PLEASE REFRAIN FROM USING AND ACCESSING THE WEBSITE, REGISTERING ON THE WEBSITE AND AVAILING ANY OF THE SERVICES ON THE WEBSITE.</strong></p>
+                    <p><strong>2.6.</strong> The Terms of Use contained in this electronic record are read together with (i) the Privacy Policy (as defined below) of the Company, as available and uploaded on the Website which can be accessed at <a href="privacy-policy.html">privacy-policy.html</a>; and (ii) any other agreement/arrangement entered between the User and the Company in relation to the purchase of the Product or availing of the Services (collectively “Company Documents”). It is expressly clarified that the Company Documents shall be considered as part and parcel hereof and shall be deemed to be incorporated herein by reference and, together with these Terms of Use, shall constitute the entire legally binding agreement between You and the Company in connection with your access, visit or use of the Website for the availing of the Services, in any manner. Therefore, by impliedly or expressly agreeing to be bound by these Terms of Use and/or through use and access of Services of Website, the User also agrees to be bound by the terms and conditions of the Privacy Policy, as may be updated, amended or revised from time to time.</p>
+                    <p><strong>2.7.</strong> The Company reserves the right to change, modify, amend, or update the Terms of Use, at its discretion, from time to time and such amended provisions of the Terms of Use shall be effective immediately upon being posted/ uploaded on the Website</p>
+                    <p><strong>2.8.</strong> It is hereby clarified that the Company/ Website may, from time to time, change provisions related to any of the Services which also include changing of the extent and scope of the Services and/ or include any other category of service or facility within the term ‘Service’, at the sole discretion of the Website. You can determine when these Terms of Use were last revised by referring to ‘LAST UPDATED’ at the top of these Terms of Use. Your continued use of the Website shall be deemed to signify Your acceptance of these provisions or amended provisions of these Terms of Use. It shall be the User's responsibility to check these Terms of Use periodically for changes. It is, further, clarified that the User’s use and access of the Website/Service(s) is subject to the most recent version of these Terms of Use made available on the Website at the time of such use.</p>
+                    <p><strong>2.9.</strong> These Terms of Use are published in compliance of, and is governed by the provisions of the IT Act and the rules, regulations, guidelines and clarifications framed there under.</p>
+
+                    <h2>3. DEFINITION</h2>
+                    <p><strong>“Account"</strong> shall mean the account/user profile created by the Users on the Website by submitting the User Data, in accordance with the terms as specified under Clause 4 (Creating An Account) below;</p>
+                    <p><strong>“Applicable Laws”</strong> means any applicable law, rule, regulation, ordinance, order, treaty, judgment, notification, decree, bye-law, governmental approval, directive, guideline, requirement or other governmental restriction, or any similar form of decision of, or determination by, or any interpretation, policy or administration, having the force of law and shall include any of the foregoing, injunction, permit or decision of any central, state or local, municipal government, authority, agency, court having jurisdiction over the matter in question;</p>
+                    <p><strong>“User Data”</strong> shall mean all the data and information as may be required by the Company for the purposes of registration of the User on the Website/creation of Account of the User on the Website and/or for the purposes of providing and enabling the Services to the User which may include, inter alia, name, email address, phone number, address, Bank account or card details, PAN number etc.</p>
+
+                    <h2>4. CREATING AN ACCOUNT</h2>
+                    <p><strong>4.1.</strong> Please note that the Website provides various features and Services and in order to avail, access and use such features and Services, the Users may be required to create an Account on the Website and become a registered User by following a sign up process of the Website. The Website allows and provides the option to the Users to access, browse and view the Website, and place orders for the purchase of the Product, by providing certain User Data, such as, name, email address, contact number and address.</p>
+                    <p><strong>4.2.</strong> For the purpose of initiating the sign-up process on the Website for creation of the Account, the User is required to provide the User Data on the Website which includes, User’s name, email address, mobile number, city or pin code and password. For the purposes of purchasing the Product from the Website, the User may also be required to provide certain sensitive personal information which includes, the User’s PAN number and bank account or card details or any other information as may be required for undertaking transactions on the Website.</p>
+                    <p><strong>4.3.</strong> You will be required to enter a valid phone number while placing an order for the Product on the Website. By providing your contact number with us, You consent to be contacted by Us via phone calls, emails, any instant messaging services and/or any other mode of communication as the Company may deem fit, in case of any purchase order placed by you and the status of such purchase order.</p>
+                    <p><strong>4.4.</strong> It is clarified that by creating the Account on the Website/following the sign-up process, you agree to all the Terms herein, Privacy Policy and all other polices of Website which may be posted at an appropriate location of the Website.</p>
+                    <p><strong>4.5.</strong> You agree that you shall provide accurate and correct information for availing any of the Services of the Website, including, at the time of making the purchase of the Product on the Website or at the time of sign-up on the Website/creating the Account on the Website; and You shall also update such information and data, from time to time, in case of any change thereto and/ or as and when required and asked by the Website in this regard. The User agrees to provide all such information on the Website as and when prompted and required by the Website.</p>
+                    <p><strong>4.6.</strong> You agree that You shall log out of your Account at the end of each session in order to ensure complete security and secrecy of your data and the Website/Company’s data. The Company reserves the right to suspend or terminate your Account with immediate effect and for an indefinite period, if the Company has reason(s) to believe that the User Data or any other data provided by the User is incorrect or false, or that the security of the User’s Account has been compromised in any way, or there is a breach of these Terms of Use or upon any unauthorised use of the User’s Account by any third party.</p>
+                    <p><strong>4.7.</strong> You are solely responsible for maintaining the confidentiality of your Account and the display/user name and the login details, received by You at the time of your sign-up/sign-in and you are fully responsible for all activities that occur under the same and the Company shall not be liable or responsible in any manner whatsoever in this regard. You expressly agree that you will immediately notify Us about any actual or potential unauthorized use of your Account, display/user name, login details, and/ or other information related thereof or any breach of security by a third party and, in this regard, the Company/ Website shall not be responsible for any liabilities that such User may incur from the misuse of the Account or password or any data and information contained therein. You agree that the Company cannot and will not be liable for any loss or damage arising from your failure to comply with the Terms of Use.</p>
+                    <p><strong>4.8.</strong> It is clarified that upon receiving a notification/ intimation/ apprehension of any actual or potential unauthorised use of any Account, We may, at our discretion, take action to block access to such Account at the earliest and take all other actions as may be required under the Applicable Laws.</p>
+                    <p><strong>4.9.</strong> The User shall be responsible for safeguarding the Account and all the information and data associated with such Account. For the safety of the data and information in such Account and prevention of any possibility of any unauthorised use thereof, it is suggested to the User to not to disclose the login information to any third parties.</p>
+                    
+                    <h2>5. PRIVACY</h2>
+                    <p>You agree that during your use and access of the Website and/or availing of the Services offered by the Website, you will provide Us with certain information and other data as mentioned under the Terms of Use which may or may not be otherwise publicly available. Please note that We respect the privacy and confidentiality of such data and the provisions pertaining to such private information and data as provided by you under these Terms of Use, are governed under the Company’s privacy policy (“Privacy Policy”) which is available at <a href="https://www.photios.ai/privacy-policy/">https://www.photios.ai/privacy-policy/</a>.</p>
+                    <p>By using and visiting the Website and availing the Services of the Website, you agree to the terms and conditions of our Privacy Policy. Regarding your private information and data, We will only collect, use, disclose or process such information and data in accordance with our Privacy Policy, which you accept by your use and access of the Website and/or availing the Services on the Website. Please note that We may share such data and information with third parties as required to be shared in terms of and in the manner as set out under the Privacy Policy. By accepting these Terms of Use, you also agree to the terms and conditions as provided under our Privacy Policy.</p>
+                    
+                    <h2>GRIEVANCE OFFICER</h2>
+                    <p><strong>1.</strong> In accordance with the provisions of the IT Act, and rules made thereunder, We have appointed Pranav Singh Pundir as the ‘Grievance Officer’ ("Grievance Officer"). Any complaints, abuse or concerns with regards to content and or comment or breach of these Terms of Use shall be immediately informed to the Grievance Officer by writing an email, having ‘Grievance Officer’ as the subject line, at <a href="mailto:admin@talaura.ai">admin@talaura.ai</a> or by writing to the following address: Grievance Officer, <a href="mailto:pranav@talaura.ai">admin@talaura.ai</a></p>
+
+                    <h2>CONTACT</h2>
+                    <p>Write to us at: <a href="mailto:admin@talaura.ai">admin@talaura.ai</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="border-t border-gray-800 bg-[#0D0D0F]">
+        <div class="container mx-auto px-4 sm:px-6 py-12">
+            <div class="mt-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
+                <div class="text-gray-500 text-sm">
+                    &copy; 2025 Talaura Technologies Private Limited. All rights reserved.
+                </div>
+                <div class="flex space-x-4 text-sm text-gray-400">
+                    <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            if(header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

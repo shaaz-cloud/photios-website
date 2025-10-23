@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Photios AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D0D0F; /* Deep Dark Background */
+            color: #E2E2E2; /* Soft Off-White Text */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+            opacity: 0.025; z-index: -2; pointer-events: none;
+        }
+        .aurora-container {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1; overflow: hidden; filter: blur(80px) brightness(0.6);
+        }
+        .aurora-shape { position: absolute; border-radius: 50%; opacity: 0.4; }
+        .aurora-1 { width: 50vw; height: 50vw; background: radial-gradient(circle, #0052D4, transparent 60%); top: 10vh; left: 10vw; animation: move-aurora-1 25s ease-in-out infinite alternate; }
+        .aurora-2 { width: 40vw; height: 40vw; background: radial-gradient(circle, #4364F7, transparent 60%); bottom: 5vh; right: 5vw; animation: move-aurora-2 30s ease-in-out infinite alternate; }
+        @keyframes move-aurora-1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(20vw, 15vh) scale(1.2); } }
+        @keyframes move-aurora-2 { from { transform: translate(0, 0) scale(1); } to { transform: translate(-15vw, -10vh) scale(0.8); } }
+        
+        .primary-cta {
+            background-color: #2E78F3;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .primary-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px rgba(46, 120, 243, 0.5), 0 0 10px rgba(46, 120, 243, 0.3);
+        }
+
+        header {
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        header.scrolled {
+            background-color: rgba(13, 13, 15, 0.75);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .legal-content h2 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; color: #f3f4f6; margin-top: 2rem; margin-bottom: 1rem; }
+        .legal-content h3 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; color: #e5e7eb; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .legal-content p, .legal-content li { color: #9ca3af; margin-bottom: 1rem; line-height: 1.75; }
+        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; }
+        .legal-content strong { color: #d1d5db; font-weight: 600; }
+    </style>
+</head>
+<body class="antialiased text-base">
+
+    <div class="aurora-container">
+        <div class="aurora-shape aurora-1"></div>
+        <div class="aurora-shape aurora-2"></div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 border-b">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+<a href="Website.html" class="flex items-center space-x-3">
+    <!-- Image Logo -->
+    <img src="logo.svg" alt="Photios AI Logo" class="h-8 w-auto">
+</a>            <a href="book-discovery-call.html" class="primary-cta text-white font-semibold px-5 py-2 rounded-full">
+                Book Discovery Call
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-32 md:py-40">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto legal-content">
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tighter text-gray-50 mb-4">Privacy Policy</h1>
+                    <p class="text-gray-500">Last updated: October 1, 2025</p>
+
+                    <p>TalAura Technologies Private Limited (“Us”, “We”, “Photios AI”, “Company” or “Our”) owns, operates and manages the website having domain name photios.ai (“Website”). In accordance with the terms and conditions of use of the Website available at photios.ai (“Terms of Use”), the Website provides the Services (as defined below) to its end-users/customers who visits, browses, accesses or uses the Website, is registered with the Website, avails the Services offered through the Website, and/or buys the Product (as defined below). For the purpose of the Privacy Policy, wherever the context so requires, the terms “User”, “You” or “Your”, shall mean: (i) a buyer of the Product; and (ii) any person who visits, browses, uses or accesses the Website or avails any of the Services (as defined below) on the Website.</p>
+
+                    <p>The Website offers a variety of services relating to presenting slides, media, documents, and customized feeds with the hybridization of virtual and live elements on any video communication software, video conferencing, web conferencing, meeting room, screensharing, cloud storage and other collaborative services offered through a software application which the User can order and download through the Website (“Product”) and such other services and features provided by the Company through the Website and the Product (“Services”).This Policy shall apply to any person who visits, browses, uses or accesses the Website or uses any Service(s) on the Website. This Policy is an electronic record in terms of the Information Technology Act, 2000 and rules made thereunder. Further, this electronic record is generated by a computer system and does not require any physical or digital signatures. Any new features and/or services that are added to Our current service at any point in the future shall also be subject to the terms set out in this policy. All the Users who access the Website will be bound by the Privacy policy to the extent applicable to them and by accepting the terms of this Policy during registration on the Website, You expressly accept this Privacy Policy and agree to be legally bound by the same.</p>
+
+                    <p>Please note that the term “User Content” means and includes the content sent or transmitted by You or displayed or uploaded by You while using the Services; and the term “User Data” shall mean and include all the data and information as may be required by the Company for the purposes of registration of the User on the Website/creation of Account of the User on the Website and/or for the purposes of providing and enabling the Services to the User which may include, inter alia, name, email address, phone number, address, Bank account or card details, PAN number etc.</p>
+
+                    <p>This privacy policy (“Privacy Policy” or “Policy”), inter alia, states the following:</p>
+                    <ul>
+                        <li>The type of information collected from the Users, including Personal Information (as defined below) and Sensitive Personal Data or Information (as defined below) relating to an individual;</li>
+                        <li>The purpose, means and modes of collection, usage, processing, retention and destruction of such information; and</li>
+                        <li>How and to whom We will disclose such information.</li>
+                    </ul>
+                    <p>“Personal Information”, as defined under the SPDI Rules, means any information that relates to a natural person, which, either directly or indirectly, in combination with other information available or likely to be available to a body corporate, is capable of identifying such a person. The SPDI rules, further, define “Sensitive Personal Data or Information”, as of a person to mean personal information about that person relating to: (i) passwords; (ii) financial information such as bank accounts, credit and debit card details or other payment instrument details; (iii) information received by body corporate under lawful contract or otherwise; and (iv) visitor details as provided at the time of registration or thereafter. Note that any data/ information relating to an individual that is freely available or accessible in public domain or furnished under the Right to Information Act, 2005 or any other law shall not qualify as Sensitive Personal Data or Information.</p>
+                    
+                    <div class="my-6 p-4 border-l-4 border-yellow-500 bg-gray-800/20 rounded-r-lg">
+                        <p class="font-bold text-yellow-300">DISCLAIMER</p>
+                        <p>BY USING AND ACCESSING THE WEBSITE AND BY AVAILING THE SERVICES OR BY OTHERWISE GIVING US YOUR INFORMATION, YOU WILL BE DEEMED TO HAVE READ, UNDERSTOOD AND AGREED TO THE PRACTICES AND POLICIES OUTLINED IN THIS PRIVACY POLICY AND AGREE TO BE BOUND BY THE PRIVACY POLICY. YOU HEREBY CONSENT TO OUR COLLECTION, USE AND SHARING, DISCLOSURE OF YOUR INFORMATION AS DESCRIBED IN THIS PRIVACY POLICY. WE RESERVE THE RIGHT TO CHANGE, MODIFY, ADD OR DELETE PORTIONS OF THE TERMS OF THIS PRIVACY POLICY, AT OUR SOLE DISCRETION, AT ANY TIME. IF YOU DO NOT AGREE WITH THIS PRIVACY POLICY AT ANY TIME, DO NOT USE ANY OF THE SERVICES OR GIVE US ANY OF YOUR INFORMATION. IF YOU USE THE SERVICES ON BEHALF OF SOMEONE ELSE, YOU REPRESENT THAT YOU ARE AUTHORIZED BY SUCH PERSON TO ACCEPT THIS PRIVACY POLICY ON SUCH PERSON’S BEHALF, AND HAVE OBTAINED THE CONSENT OF OR ARE AUTHORISED TO PROVIDE CONSENT ON BEHALF OF SUCH PERSON TO OUR COLLECTION, USE AND DISCLOSURE OF SUCH INDIVIDUAL’S INFORMATION IN IN ACCORDANCE WITH THE TERMS CONTAINED HEREIN. YOU MAY NOTE THAT THIS PRIVACY POLICY IS BASED ON THE APPLICABLE LAWS OF INDIA AND GOOD DATA PRIVACY PRACTICES ADOPTED BY THE COMPANY IN INDIA AND MAY BE FOUND DEFICIENT WITH RESPECT TO CERTAIN PRIVACY LAWS OF SOME OTHER COUNTRIES. BY VISITING THE WEBSITE, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS PRIVACY POLICY. IF YOU DO NOT AGREE WITH THE TERMS CONTAINED HEREIN, PLEASE DO NOT USE OR ACCESS OUR WEBSITE OR AVAIL ANY SERVICES ON THE WEBSITE. BY MERE USE OF THE WEBSITE, YOU EXPRESSLY CONSENT TO OUR USE AND DISCLOSURE OF YOUR PERSONAL INFORMATION IN ACCORDANCE WITH THIS PRIVACY POLICY.</p>
+                    </div>
+
+                    <h2>PURPOSE OF THIS PRIVACY POLICY</h2>
+                    <p>We respect your need to understand how and why information is being collected, used, disclosed, transferred and stored. Thus, We have developed this policy to familiarize You with Our practices and demonstrate Our commitment to the protection of Your privacy and Your personal information. This Privacy Policy sets out the way in which We process Your information when You visit the Website or use the Services in accordance with applicable data protection laws. By accessing Our website and services, You agree to be bound by the terms of this Policy. It is important that You read this policy together with any other policies We may provide on specific occasions when We are collecting or processing your personal data, so that You are fully aware of how and why We are using your personal data. This policy supplements the other notices and is not intended to override them.</p>
+                    <p>The information contained on this Website and the personal information collected by using/ login and or accessing this Website are stored at a secured server. It is stated by the server service provider that they have all the best security practices required for the server. The Website is owned by Us and is located in India. Hence, we are bound by duty to abide by the laws, including but not limited to, regulations, rules, circulars and notifications governing privacy in India.</p>
+
+                    <h2>SCOPE OF THIS PRIVACY POLICY</h2>
+                    <p>We provide this Privacy Policy to inform You of Our policies and procedures regarding collection, storage, and processing and sharing of personal data that We receive from Users of the Website or those which are stored or accessed by Us at the time of availing the Services on the Website.</p>
+                    <p>With regard to this Privacy Policy, the terms "using" and "processing" information include, without limitation; the use of cookies; and the collection, storage, transfer, evaluation, deletion, disclosure, management, handling, modifying and use of personal data.</p>
+                    <p>This Privacy Policy applies only to personal data that You provide to Us via the Website. We reserve the right to update this Privacy Policy from time to time to reflect any changes to Our Services through the Website. We will do this by amending the Privacy Policy on the Website. The changes will take effect automatically, as soon as they are posted on the Website.</p>
+                    <p>This Privacy Policy is applicable to all Users of this Website. By using the Services through the Website, registering with Us or by otherwise giving Us Your information, You will be deemed to have read, understood and agreed to the practices and policies outlined in this Privacy Policy and agree to be bound by the terms hereof. You hereby consent to Us collecting, using and sharing and disclosing Your information as described in this Privacy Policy. We reserve the right to change, modify, add or delete portions of the terms of this Privacy Policy, at Our sole discretion, at any time. If You do not agree with this Privacy Policy at any time, do not use any of the services, use or access the Website or give Us any of Your information. Any User that does not agree with any provisions of the Privacy Policy has the option to discontinue the availing the Services provided by Us and the use of the Website immediately.</p>
+                    <p>This Privacy Policy does not apply to any third-party website(s) and mobile app(s). You are requested to take note that information and privacy practices of Our business partners, advertisers, sponsors or other sites to which We may provide hyperlink(s), may be different from this policy. Hence, it is recommended that You review the Privacy Policy of any such third parties before You interact with such interfaces.</p>
+
+                    <h2>CONNECTING APPLICATION SERVICES TO GOOGLE CALENDAR</h2>
+                    <p>Photios AI may gather calendar information, including details such as meeting participants, descriptions, subjects, and date and time of meetings, if a user chooses to enable our calendar integration on our application. This information is collected to provide users with certain application features, such as an updated calendar, future events, and the ability to manage Photios AI notetake assistant for scheduling purposes within the application.</p>
+                    <p>Our access to and use of information obtained from Google Accounts will conform to the Google API Services User Data Policy, which includes complying with the Limited Use requirements.</p>
+
+                    <h2>COLLECTION AND PROCESSING OF PERSONAL DATA</h2>
+                    <p>We may collect and process your personal data for, including without limitation, the following purposes:</p>
+                    <h3>Providing Our Services:</h3>
+                    <p>The User might send, transmit, display, upload or present such User Content through the Website while accessing or using certain features or service offering on the Website and We might process your personal data and User Content to provide Services so as to facilitate the interaction and transaction of the Users. For example, User Data is processed in order to set up your account on the Website, allow You to place order for the purchasing/availing the Product and accessing the features of the Product. We process the following personal data: (i) name; (ii) phone number; (iii) email address; (iv) IP address; (v) location; (vi)User Data.</p>
+                    <h3>Customer service:</h3>
+                    <p>We need to process personal data for this purpose because it enables Us to adequately respond to Users’ questions/ concerns, to verify the correctness of various requests and orders for the Product placed by the User on the Website</p>
+                    <h3>Marketing (Direct):</h3>
+                    <p>We process Users’ data for (direct) marketing purposes. This means that We can contact customers to draw attention to Our services. For this purpose, We process the following personal data: (i) website behaviour; (ii) IP address;(iii) email address; (iv) postal address; (v) phone number (vi) online identifiers; (viii) location; and (ix) account/user profile information.</p>
+                    <h3>Commercial Use:</h3>
+                    <p>All the information provided to Us by a User, including personal information or any sensitive personal data or information, is provided voluntarily. You understand that We may use certain information provided by You, which may include your personal information or sensitive personal data or information for (i) the purpose of providing the Services offered through the Website to You; (ii) commercial purposes and in an aggregated and anonymized form for research, statistical analysis and/or business intelligence purposes; (iii) sale or transfer of such research, statistical or intelligence data in an aggregated or non-personally identifiable form to third parties and affiliates; (iv) communication purposes to enhance your experience for Services provided on the Website and obtaining feedback in relation to the Services; (v) customer support related issues; and (vi) and enabling you to complete any transaction through the Website.</p>
+                    <p>In addition to the above, We may also use Your personal data for several reasons, including but not limited to; (i) keep You informed of the transaction status; (ii) send You verification messages or confirmations via SMS or WhatsApp or any other messaging services in relation to provisions of Services; (iii) allow Our customer service to contact You, if necessary; (iv) customize the content of Our Website; (v) request You for reviews of the Services; (vi) validate/authenticate Your account/user profile and to prevent any misuse or abuse of the same; (vii) contact You on Your birthday/anniversary to inform You of any special offers; (viii) send You important notices and communications regarding Our services availed or changes to the terms and conditions and/or policies; (ix) to administer Our business and Website; (xii) to send You marketing related communications; (x) to deal with enquiries and complaints raised by You and to troubleshoot problems; (xi) ensure compliance with all applicable laws and to ensure safety of the Website and all Users; (xii) to obtain your Know Your Customer (KYC) details; and/or (xii) to prevent fraud, errors and/or any illegal activity on the Website.</p>
+
+                    <h2>DISCLOSURE OF DATA</h2>
+                    <p>It may be necessary for Us to disclose Your personal data whether by law, legal process and/or by request from public and/or governmental authorities within or outside of your country of residence. We may also disclose Your personal information if We determine that disclosure is necessary or appropriate for the purposes of law enforcement, national security or to prevent or stop any activity We may consider to be, or to pose a risk of being, illegal, unethical or legally actionable.</p>
+                    <p>Some sections on the Website are freely accessible by all Users and visitors and require no prior registration. Further, certain sections on the Website are accessible by Users only after entering their details, username and password. Therefore, We request You to use a safe and secure server to access the Website to ensure the safety of Your username, password and other information. We do not guarantee the security and/or privacy of any information, which may be available to all Users and visitors of the Website publicly.</p>
+                    <p>We automatically receive the URL of the site from which anyone visits. We also receive the Internet Protocol (IP) address of each User’s computer/device (or the proxy server a User used to access the World Wide Web), device IDs or other unique identifiers, User’s computer/device operating system and type of web browser the User is using, email patterns, as well as the name of User’s ISP. This information is used to analyze overall trends to help Us improve Our Services. The linkage between User’s IP address and User’s personally identifiable information is not shared with or disclosed to third parties. Notwithstanding the above, We may share and/or disclose some of the aggregate findings (not the specific data) in anonymized form (i.e., non-personally identifiable) with advertisers, sponsors, investors, strategic partners, and others in order to help grow Our business.</p>
+                    <p>Note that We maintain a strict no-spam policy and do not rent, sell, disclose or share personal information belonging to You with other people or non-affiliated companies without Your consent, except to provide Services which You have requested/placed ordered for or otherwise as specifically provided for in this Policy.</p>
+                    <p>You agree that in addition to as may be provided in this Policy and Terms of Use, We may also disclose Your personal information to third-parties under the following circumstances and You provide Your express consent to the same:</p>
+                    <ul>
+                        <li><strong>Third party service providers:</strong> We engage, retain or might, as per requirement and business needs of the Company, employ, engage, contract with third party service providers to work with Us, under agreements containing confidentiality obligations and in accordance with law, in relation to the Services provided by Us on the Website. These third party service providers may use Your personal information in assisting Us to communicate with You about Our offers, feedback of Services, assisting in payment facilities, verification of payment information to process payment, providing customer support relating to the Services, obtaining your KYC etc. We may employ third party companies and/or individuals to help improve or facilitate and to provide the Service on Our behalf, to perform Website-related services, including but not limited to: payment processing, maintenance services, fraud detection services, database management, web analytics, monitoring, evaluation services etc. In this event, Your information may be shared with such third-party companies and/or individuals;</li>
+                        <li><strong>Compliance with laws and protection of Users:</strong> We may release your personal information when the same is required in order to comply with the law, in response to court orders, court summons, judgments, decrees, injunctions, arbitral awards, administrative orders, governmental investigation or orders of any government authority or any other legal process, to establish/exercise Our legal rights or defend against legal claims or in the event We reasonably believe that doing so is legally required or is in your interest to protect Your property or other legal rights or property or rights of others. We may also share your personal information in order to enforce and fully comply with Our terms of service and other Company policies;</li>
+                        <li><strong>Business transfer and mergers:</strong> We may transfer Your personal information if the Company is acquired by or merged with another Company, to the extent permitted by applicable law and/or required under the scheme/arrangement of merger, etc. In such an event We will notify You before Your personal information is transferred/shared with the other entity and hence becomes subject to a different Privacy Policy;</li>
+                        <li><strong>Contracting parties:</strong> We transfer/share Your information with Our third-party contractors to facilitate the availing of Services by You or payment gateways etc. to You in order to consummate the transaction.</li>
+                        <li><strong>With Your consent:</strong> In addition to the aforementioned circumstances, We may share Your personal information with third parties with Your prior consent and/or at Your request.</li>
+                    </ul>
+
+                    <h2>COLLECTION AND USE OF NON-PERSONAL DATA</h2>
+                    <p>Non-personal data is data that can never be used to identify an individual. We may collect information regarding customer activities on Our Website. This aggregated information shall be used by Us in research, analysis, to improve and monitor Our Services. Such non-personal data may be shared in aggregated, non-personal form with third party to enhance customer experience, offerings or services.</p>
+
+                    <h2>COOKIES</h2>
+                    <p>The Website uses cookies, and while using the Website You will be prompted to accept all cookies. We may place text files in the browser files of Your computer system. A cookie itself does not contain personal information and it will only enable Us to relate Your use of the Website and Your behaviour on the Website to information that You have specifically and knowingly provided. The only personal information that a cookie can contain is the information You supply to the cookie. A cookie can’t read data off Your hard disk or read cookie files created by other websites.</p>
+                    <p>We may place both permanent and temporary cookies. A permanent cookie will remain on your web browser until its expiry date, unless deleted prior to such expiry date. However, most cookies are “session cookies” meaning that they automatically get deleted from your computer system at the end of the session. You can refuse cookies by turning them off in Your browser or alternatively You can also set your browser to warn You before accepting any cookies. Therefore, You are always free to decline Our cookies if Your browser permits, however We use certain cookies to authenticate Users on each page after the User logs on to the Website or accesses any Services. If you, as a casual visitor, have inadvertently browsed any other page of this Website prior to reading this Privacy Policy, and You do not agree with the manner in which such information is obtained, collected, processed, stored, used, disclosed or retained, merely quitting this browser application should ordinarily clear all temporary cookies installed by Us. All visitors, however, are encouraged to use the “clear cookies” functionality of their browsers to ensure such clearing / deletion, as We cannot guarantee, predict or provide for the behavior of the equipment of all the visitors of the Website. Note that You are not a casual visitor if You have willingly submitted any personal data or information to Us through any means, including email, post or through the registration process on the Website. All such visitors will be deemed to be, and will be treated as Users for the purposes of this Privacy Policy, and in which case, this Privacy Policy applies in its entirety to such persons.</p>
+                    <p>The data that cookies collect will be used to process and/or analyse information by third parties to help improve or facilitate Our services, to provide Service on Our behalf, to Website-related services including but not limited to maintenance services; fraud detection services; database management; web analytics; monitoring; and evaluation services. If You have any questions about Our cookie usage, please contact Us at the contact details/information mentioned below.</p>
+
+                    <h2>YOUR RIGHTS AND HOW TO EXERCISE THEM</h2>
+                    <p>We respect the exercise of the rights You have in relation to the personal data We process or use. You can request access to or a copy of your personal data collected and processed by Us. You may also request to withdraw Your consent provided hereunder at any point in time, rectification and removal of personal data or the restriction of the processing of Your personal data. Users have the right to unilaterally change their e-mail and contact preferences at any time by logging into their account/user profile on the Website and changing the account/user profile settings. You also have the right to data portability. If You have an objection to use of Your data under this policy, please write to Our privacy team at pranav@photios.ai. To prevent misuse, We will ask You to identify yourself. Please note that Your request for withdrawal of consent, cancellation of account, removal of data or restriction of the processing data may result in the Company being unable to provide You the Services or to terminate any existing relationship the Company may have with You.</p>
+
+                    <h2>NOTE FOR ALL USERS</h2>
+                    <p>We do not control or endorse the content, messages or information found in any Services and, therefore, We specifically disclaim any liability with regard to the Services and any actions resulting from Your participation in any Services, and You agree that you waive any claims against Us relating to same, and to the extent such waiver may be ineffective, you agree to release any claims against Us relating to the same.</p>
+                    <p>You are responsible for maintaining the accuracy, truthfulness, correctness and completeness of the information You submit or provide to Us, on the Website; and shall hold harmless and indemnify Website from and against all claims arising out of or in relation to the wrongful information posted, provided by You to Us, on the Website.</p>
+                    <p>If Your personal information changes, You may correct, delete inaccuracies, or amend information by making the change on information page of Website or by contacting Us on Our contact information as detailed below. There may be circumstances where We will not correct, delete or update Your personal data, including; (i) where the personal data is opinion data that is kept solely for evaluative purpose; and (ii) the personal data is in documents related to a prosecution if all proceedings relating to the prosecution have not been completed. If you wish to cancel your account or request that We no longer use your information to provide you Services, contact Us on Our contact information as detailed below.</p>
+
+                    <h2>SECURITY</h2>
+                    <p>We understand the serious implications of data security and take extensive measures to ensure Your data and information is secured. We take extensive technical, and legal measures to safeguard Your personal data. The Website uses a reliable SSL certificate to ensure Your personal data is not misused in any manner whatsoever. We use SSL encryption when transmitting certain kinds of information, such as financial services information or payment information. An icon resembling a padlock is displayed on the bottom of most browser windows during SSL transactions that involve debit/credit cards and other forms of payment. In case We ask You for Your debit/credit card number for payment or for verification purposes, the same will be SSL encrypted. The information You provide will be stored securely on Our servers. Once You choose to store or enter Your debit/credit card number, it will not be displayed back to You in its entirety when You retrieve or edit it in the future. Instead of the entire number, You will only see asterisks and either the first four digits or the last four digits of your debit/credit card number.</p>
+                    <p>We also work with third party service providers/professionals who provide services on Our behalf or to Us. We enter into agreements with such third-party service providers and professionals to ensure complete security and safety of the User information. Such third-party service providers do not have any independent right to the information provided by Us to them.</p>
+                    <p>Our employees and data processors, who have access to, and are associated with the processing of sensitive personal data or information, are obliged to respect the confidentiality of every User’s personal information or sensitive personal data and information. We have put in place procedures and technologies as per good industry practices and in accordance with the applicable laws, to maintain security of all personal data from the point of collection to the point of destruction. Any third-party data processor to which We transfer Personal Data shall have to agree to comply with those procedures and policies, or put in place adequate measures on their own.</p>
+                    <p>You shall be liable to indemnify Us due to any loss suffered by Us due to such unauthorized use of Your account and password. Note that We make all User information accessible to Our employees, agents or partners and third parties only on a need-to-know basis and bind only its employees to strict confidentiality obligations. However, We are not responsible for the confidentiality, security or distribution of Your personal information by Our partners and third parties outside the scope of Our agreement with such partners and third parties.</p>
+                    <p>In case there is any breach of security, We will make all legally required disclosures concerning the breach and the confidentiality, or integrity of Your unencrypted electronically stored "personal data" to You via email or by posting it on Website without unreasonable delay, in as far as is consistent with any legitimate needs of law enforcement and any measures required to determine the scope of the breach and to safeguard the integrity of data.</p>
+
+                    <h2>APPLICABLE LAWS AND REGULATIONS</h2>
+                    <p>We ensure that your data and information shall be protected under the provisions of General Data Protection Regulation (“GDPR”), Information Technology Act, 2000 and Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 along with any amendments made to these acts, rules and regulations.</p>
+
+                    <h2>RETENTION PERIODS</h2>
+                    <p>We do not keep your personal data longer than necessary for the purpose of the processing. This includes, for example, the purposes of satisfying any legal, regulatory, accounting, reporting requirements, to carry out legal work, for the establishment or defence of legal claims. We may aggregate and anonymize your personal data (so that it can no longer be associated with you) for research or statistical purposes, in which case We may use this information indefinitely without further notice to you.</p>
+
+                    <h2>DATA PROTECTION</h2>
+                    <p>Under certain circumstances, You have rights under GDPR and applicable data protection laws in relation to Your personal data. It is Our policy to respect Your rights and We will act promptly and in accordance with any applicable law, rule or regulation relating to the processing of Your personal data. Details of Your rights are set out below:</p>
+                    <ul>
+                        <li><strong>Right to be informed about how personal data is used</strong> – You have a right to be informed about how We will use and share Your personal data. This explanation will be provided to You in a concise, transparent, intelligible and easily accessible format and will be written in clear and plain language;</li>
+                        <li><strong>Right to access personal data</strong> – You have a right to obtain confirmation of whether We are processing Your personal data, access to Your personal data and information regarding how Your personal data is being used by Us;</li>
+                        <li><strong>Right to have inaccurate personal data rectified</strong> – You have a right to have any inaccurate or incomplete personal data rectified. If We have disclosed the relevant personal data to any third parties, We will take reasonable steps to inform those third parties of the rectification where possible;</li>
+                        <li><strong>Right to have personal data erased in certain circumstances</strong> – You have a right to request that certain personal data held by Us is erased. This is also known as the ‘right to be forgotten’. This is not a blanket right to require all personal data to be deleted. We will consider each request carefully in accordance with the requirements of any laws relating to the processing of your personal data;</li>
+                        <li><strong>Right to restrict processing of personal data in certain circumstances</strong> – You have a right to block the processing of your personal data in certain circumstances. This right arises if You are disputing the accuracy of personal data, if You have raised an objection to processing, if processing of personal data is unlawful and You oppose erasure and request restriction instead or if the personal data is no longer required by Us but You require the personal data to be retained to establish, exercise or defend a legal claim;</li>
+                        <li><strong>Right to data portability</strong> – Under certain circumstances, You have the right to request to receive a copy of Your personal data in a commonly used electronic format. This right only applies to personal data that You have provided to Us (for example by completing a form or providing information through the Website). Information about You which has been gathered by monitoring Your behaviour will also be subject to the right to data portability. The right to data portability only applies if the processing is based on Your consent or if the personal data must be processed for the performance of a contract and the processing is carried out by automated means (i.e. electronically);</li>
+                        <li><strong>Right to object to processing of personal data in certain circumstances (including where personal data is used for marketing purposes)</strong> – You have a right to object to processing being carried out by Us if (a) We are processing personal data based on legitimate interests or for the performance of a task in the public interest (including profiling), (b) if We are using personal data for direct marketing purposes, or (c) if information is being processed for scientific or historical research or statistical purposes. You will be informed that You have a right to object at the point of data collection and the right to object will be explicitly brought to Your attention and be presented clearly and separately from any other information; and</li>
+                        <li><strong>Right not to be subject to automated decisions where the decision produces a legal effect or a similarly significant effect</strong> – You have a right not to be subject to a decision which is based on automated processing where the decision will produce a legal effect or a similarly significant effect on You.</li>
+                    </ul>
+                    <p>You may exercise any of the above-mentioned rights by sending a request to Us on Our contact information as detailed below. You will not have to pay a fee to access Your personal data (or to exercise any of the other rights). However, to the extent permitted under the applicable data protection laws, We may refuse to comply with Your request if Your request is clearly unfounded, repetitive or excessive.</p>
+                    <p>We may need to request specific information from You to help Us confirm Your identity and ensure Your right to access Your personal data (or to exercise any of Your other rights). This is a security measure to ensure that personal data is not disclosed to any person who has no right to receive it. We may also contact You to ask You for further information in relation to Your request to speed up Our response.</p>
+                    <p>We try to respond to all legitimate requests within one month. Occasionally it may take Us longer than one calendar month if Your request is particularly complex or You have made a number of requests. In this case, We will notify You and keep You updated.</p>
+
+                    <h2>CONTACT INFORMATION</h2>
+                    <p>If you have any question about the processing of your personal data or you have any other queries, you can reach out to us. Our team will be happy to assist you. Our contact information is as follow:</p>
+                    <p>
+                        <strong>Address:</strong> D- 141, DLF Crest, Golf Course Rd, DLF Ph 5, Galleria DLF-IV, Gurgaon, Galleria Dlf-iv, Haryana, India, 122009<br>
+                        <strong>Email:</strong> admin@talaura.ai
+                    </p>
+
+                    <h2>GRIEVANCE OFFICER</h2>
+                    <p>In accordance with the provisions of the Information Technology Act, 2000, and rules made thereunder, the name and contact details of the grievance officer are provided below:</p>
+                    <p>
+                        <strong>Attn:</strong> Pranav Singh Pundir<br>
+                        <strong>Address:</strong> D- 141, DLF Crest, Golf Course Rd, DLF Ph 5, Galleria DLF-IV, Gurgaon, Galleria Dlf-iv, Haryana, India, 122009<br>
+                        <strong>Email:</strong> admin@photios.ai
+                    </p>
+
+                    <p>&copy; 2025 Talaura Technologies Private Limited. All rights reserved</p>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="border-t border-gray-800 bg-[#0D0D0F]">
+        <div class="container mx-auto px-4 sm:px-6 py-12">
+            <div class="mt-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
+                <div class="text-gray-500 text-sm">
+                    &copy; 2025 Talaura Technologies Private Limited. All rights reserved.
+                </div>
+                <div class="flex space-x-4 text-sm text-gray-400">
+                    <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            if(header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
