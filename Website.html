@@ -1,115 +1,306 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWJXDPQTJC"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JWJXDPQTJC');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-JWJXDPQTJC');
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photios AI - The Future of Retail Intelligence</title>
     <meta name="description" content="Unlock hidden revenue in your retail stores. Photios AI analyzes 100% of sales conversations to find lost deals, coach your team, and drive growth.">
-    
-    <!-- SEO FIX: Added Canonical URL -->
-    <link rel="canonical" href="https://photios.ai/index.html"> <!-- Assuming this is the main URL -->
 
-    <!-- SEO FIX: Added Open Graph / Facebook / LinkedIn Meta Tags -->
+    <link rel="canonical" href="https://photios.ai/index.html">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://photios.ai/"> <!-- Use your site's full URL -->
+    <meta property="og:url" content="https://photios.ai/">
     <meta property="og:title" content="Photios AI - The Future of Retail Intelligence">
     <meta property="og:description" content="Unlock hidden revenue in your retail stores. Photios AI analyzes 100% of sales conversations to find lost deals, coach your team, and drive growth.">
-    <meta property="og:image" content="https://photios.ai/photios-og-image.jpg"> <!-- CREATE and UPLOAD a preview image (e.g., 1200x630px) -->
-
-    <!-- SEO FIX: Added Twitter Card Meta Tags -->
+    <meta property="og:image" content="https://photios.ai/photios-og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://photios.ai/"> <!-- Use your site's full URL -->
+    <meta property="twitter:url" content="https://photios.ai/">
     <meta name="twitter:title" content="Photios AI - The Future of Retail Intelligence">
     <meta name="twitter:description" content="Unlock hidden revenue in your retail stores. Photios AI analyzes 100% of sales conversations to find lost deals, coach your team, and drive growth.">
-    <meta name="twitter:image" content="https://photios.ai/photios-og-image.jpg"> <!-- Use the same preview image URL -->
-
-    <!-- Tailwind CSS (Play CDN) - Must load here to prevent FOUC -->
+    <meta name="twitter:image" content="https://photios.ai/photios-og-image.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- SEO FIX: Corrected favicon type from svg+xml to png -->
-    <link rel="icon" href="Logo1.png" type="image/png"> 
-    
+
+    <link rel="icon" href="Logo1.png" type="image/png">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-    
-    <!-- PERFORMANCE FIX: Added 'defer' to non-critical JS libraries -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
-    
+
     <style>
         :root {
             --rev-speed: 0.06turn;
-            --glow-color-blue: rgba(96, 165, 250, 0.5); /* blue-400 */
-            --glow-color-green: rgba(52, 211, 153, 0.5); /* green-400 */
-            --glow-color-yellow: rgba(250, 204, 21, 0.5); /* yellow-400 */
-            --glow-color-purple: rgba(167, 139, 250, 0.5); /* purple-400 */
+            --glow-color-blue: rgba(96, 165, 250, 0.5);
+            /* blue-400 */
+            --glow-color-green: rgba(52, 211, 153, 0.5);
+            /* green-400 */
+            --glow-color-yellow: rgba(250, 204, 21, 0.5);
+            /* yellow-400 */
+            --glow-color-purple: rgba(167, 139, 250, 0.5);
+            /* purple-400 */
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0D0D0F; /* Deep Dark Background */
-            color: #E2E2E2; /* Soft Off-White Text */
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            background-color: #0D0D0F;
+            /* Deep Dark Background */
+            color: #E2E2E2;
+            /* Soft Off-White Text */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- New CSS for the Hero Gradient Bar --- */
+        .hero-gradient-bar {
+            background-image: linear-gradient(180deg, #0052D4, #4364F7, #6FB1FC, #0052D4);
+            background-size: auto 200%;
+            /* Vertical size */
+            animation: hero-bar-shimmer 3.5s linear infinite;
+            will-change: background-position;
+        }
+
+        @keyframes hero-bar-shimmer {
+            to {
+                background-position: 0 200%;
+                /* Animate background-position vertically */
+            }
+        }
+
+        /* Stop animation for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-gradient-bar {
+                animation: none;
+            }
         }
 
         /* Background Grain and Aurora Effect */
         body::before {
             content: '';
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-            opacity: 0.025; /* Slightly reduced opacity */
+            opacity: 0.025;
+            /* Slightly reduced opacity */
             z-index: -2;
             pointer-events: none;
         }
+
         .aurora-container {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             z-index: -1;
             overflow: hidden;
             filter: blur(80px) brightness(0.6);
             will-change: transform;
         }
+
         .aurora-shape {
             position: absolute;
             border-radius: 50%;
             opacity: 0.4;
             will-change: transform;
         }
+
         .aurora-1 {
-            width: 50vw; height: 50vw;
+            width: 50vw;
+            height: 50vw;
             background: radial-gradient(circle, #0052D4, transparent 60%);
-            top: 10vh; left: 10vw;
+            top: 10vh;
+            left: 10vw;
             animation: move-aurora-1 25s ease-in-out infinite alternate;
         }
+
         .aurora-2 {
-            width: 40vw; height: 40vw;
+            width: 40vw;
+            height: 40vw;
             background: radial-gradient(circle, #4364F7, transparent 60%);
-            bottom: 5vh; right: 5vw;
+            bottom: 5vh;
+            right: 5vw;
             animation: move-aurora-2 30s ease-in-out infinite alternate;
         }
-        @keyframes move-aurora-1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(20vw, 15vh) scale(1.2); } }
-        @keyframes move-aurora-2 { from { transform: translate(0, 0) scale(1); } to { transform: translate(-15vw, -10vh) scale(0.8); } }
 
-        ::selection { background: rgba(46, 120, 243, 0.3); }
+        @keyframes move-aurora-1 {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(20vw, 15vh) scale(1.2);
+            }
+        }
+
+        @keyframes move-aurora-2 {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(-15vw, -10vh) scale(0.8);
+            }
+        }
+
+        ::selection {
+            background: rgba(46, 120, 243, 0.3);
+        }
+
+        /* How it Works Section Animations */
+
+        /*
+        * Step 1 - AI Pin Zoom Animation
+        */
+        @keyframes zoomOnPin {
+
+            0%,
+            100% {
+                transform: scale(1);
+                /* Normal size */
+            }
+
+            50% {
+                transform: scale(2.5);
+                /* Zoomed in 2.5x */
+            }
+        }
+
+        .animated-pin-collect .zoom-target {
+            /* Coordinates for the pin on the chest (35, 57.5) */
+            transform-origin: 35px 57.5px;
+            animation: zoomOnPin 3.5s ease-in-out infinite;
+        }
+
+
+        /*
+        * Step 1 - AI Pin "Collect Audio" Animation
+        */
+        @keyframes pulseRing {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulseBody {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .animated-pin-collect .pin-body {
+            /* Coordinates for the pin on the chest (35, 57.5) */
+            transform-origin: 35px 57.5px;
+            animation: pulseBody 2s ease-in-out infinite;
+        }
+
+        .animated-pin-collect .pin-ring {
+            /* Coordinates for the pin on the chest (35, 57.5) */
+            transform-origin: 35px 57.5px;
+            animation: pulseRing 3s ease-out infinite;
+        }
+
+        .animated-pin-collect .pin-ring:nth-of-type(2) {
+            animation-delay: 1s;
+        }
+
+        .animated-pin-collect .pin-ring:nth-of-type(3) {
+            animation-delay: 2s;
+        }
+
+
+        /* Step 2 - Bar Chart Animation (Unchanged) */
+        @keyframes barRise {
+
+            0%,
+            100% {
+                transform: scaleY(0.5);
+                transform-origin: bottom;
+            }
+
+            50% {
+                transform: scaleY(1);
+                transform-origin: bottom;
+            }
+        }
+
+        .animated-bar-chart .bar {
+            animation: barRise 2s ease-in-out infinite;
+        }
+
+        .animated-bar-chart .bar:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .animated-bar-chart .bar:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .animated-bar-chart .bar:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+
+        /* Step 3 - Dashboard Animation (Unchanged) */
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .animated-dashboard .layout-bg {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            animation: drawLine 1.5s ease-out forwards infinite alternate;
+        }
+
+        .animated-dashboard .layout-line {
+            stroke-dasharray: 20;
+            stroke-dashoffset: 20;
+            animation: drawLine 1.5s ease-out forwards infinite alternate;
+        }
+
+        .animated-dashboard .layout-line:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .animated-dashboard .layout-line:nth-child(3) {
+            animation-delay: 1s;
+        }
 
         .gradient-text {
             background: linear-gradient(90deg, #0052D4, #4364F7, #6FB1FC);
@@ -119,7 +310,12 @@
             -webkit-text-fill-color: transparent;
             animation: shimmer 5s linear infinite alternate;
         }
-        @keyframes shimmer { to { background-position: 200% center; } }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
 
         .primary-cta {
             /* background-color: #2E78F3; -- Replaced by gradient */
@@ -128,24 +324,36 @@
             animation: cta-shimmer 3.5s linear infinite;
             transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
             will-change: transform, background-position;
-            box-shadow: 0 0 15px rgba(46, 120, 243, 0.3); /* Add a base shadow */
+            box-shadow: 0 0 15px rgba(46, 120, 243, 0.3);
+            /* Add a base shadow */
         }
+
         .primary-cta:hover {
             transform: translateY(-4px);
             /* On hover, we add a second animation for the pulsing glow */
             animation: cta-shimmer 3.5s linear infinite, hover-glow 1.5s ease-in-out infinite alternate;
         }
-        
+
         /* Define the hover-glow animation */
         @keyframes cta-shimmer {
-            to { background-position: 200% center; }
-        }
-        @keyframes hover-glow {
-            from { box-shadow: 0 0 15px rgba(46, 120, 243, 0.3); }
-            to { box-shadow: 0 0 30px rgba(46, 120, 243, 0.6); }
+            to {
+                background-position: 200% center;
+            }
         }
 
-        .stat-highlight { color: #6FB1FC; }
+        @keyframes hover-glow {
+            from {
+                box-shadow: 0 0 15px rgba(46, 120, 243, 0.3);
+            }
+
+            to {
+                box-shadow: 0 0 30px rgba(46, 120, 243, 0.6);
+            }
+        }
+
+        .stat-highlight {
+            color: #6FB1FC;
+        }
 
         /* --- Liquid Glass Effect --- */
         .glass-card {
@@ -153,14 +361,21 @@
             backdrop-filter: blur(12px) saturate(160%);
             -webkit-backdrop-filter: blur(12px) saturate(160%);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 28px; /* Consistent rounded corners */
+            border-radius: 28px;
+            /* Consistent rounded corners */
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
             /* REMOVED transition for hover, GSAP handles continuous animation now */
-            will-change: box-shadow; /* Optimize transitions */
+            will-change: box-shadow;
+            /* Optimize transitions */
         }
 
         /* Apply glass effect to other cards as well */
-        .card, .insight-card, .interaction-card, .insight-tile-coverflow, .revolving-tile .tile-content, .opportunity-card {
+        .card,
+        .insight-card,
+        .interaction-card,
+        .insight-tile-coverflow,
+        .revolving-tile .tile-content,
+        .opportunity-card {
             background: rgba(26, 26, 28, 0.65);
             backdrop-filter: blur(12px) saturate(160%);
             -webkit-backdrop-filter: blur(12px) saturate(160%);
@@ -168,47 +383,84 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
         }
 
-        .card { border-radius: 28px; } /* Consistent rounded corners */
-        .insight-card { border-radius: 20px; }
-        .interaction-card, .opportunity-card { border-radius: 24px; }
-        .insight-tile-coverflow { border-radius: 24px; }
-        .revolving-tile .tile-content { border-radius: 24px; }
-        .pillar-card { border-radius: 28px; } /* Added specific radius for pillar cards */
+        .card {
+            border-radius: 28px;
+        }
+
+        /* Consistent rounded corners */
+        .insight-card {
+            border-radius: 20px;
+        }
+
+        .interaction-card,
+        .opportunity-card {
+            border-radius: 24px;
+        }
+
+        .insight-tile-coverflow {
+            border-radius: 24px;
+        }
+
+        .revolving-tile .tile-content {
+            border-radius: 24px;
+        }
+
+        .pillar-card {
+            border-radius: 28px;
+        }
+
+        /* Added specific radius for pillar cards */
 
         /* --- Pillar Card Styles --- */
         .pillar-card .pillar-icon {
-            opacity: 0; /* Let GSAP handle the reveal */
-            transform: scale(0.5) rotate(-15deg); /* Start smaller and slightly rotated */
+            opacity: 0;
+            /* Let GSAP handle the reveal */
+            transform: scale(0.5) rotate(-15deg);
+            /* Start smaller and slightly rotated */
             will-change: transform, opacity;
         }
+
         /* --- REMOVED :hover style --- */
 
         /* --- NEW: Rolodex Styles --- */
         .rolodex-container {
-            display: inline-flex; /* Use flex to align characters */
-            overflow: hidden; /* Hide the overflow from rolling digits */
-            vertical-align: bottom; /* Align with surrounding text if needed */
+            display: inline-flex;
+            /* Use flex to align characters */
+            overflow: hidden;
+            /* Hide the overflow from rolling digits */
+            vertical-align: bottom;
+            /* Align with surrounding text if needed */
         }
+
         .rolodex-char {
             display: inline-block;
-            position: relative; /* Needed for absolute positioning of digits */
-            height: 1em; /* Set height based on font size */
-            line-height: 1em; /* Match height */
+            position: relative;
+            /* Needed for absolute positioning of digits */
+            height: 1em;
+            /* Set height based on font size */
+            line-height: 1em;
+            /* Match height */
         }
+
         .rolodex-digit-track {
             position: absolute;
             left: 0;
             top: 0;
             display: flex;
             flex-direction: column;
-            will-change: transform; /* Optimize animation */
+            will-change: transform;
+            /* Optimize animation */
         }
+
         .rolodex-digit-track span {
             height: 1em;
             line-height: 1em;
         }
 
-        .gsap-reveal { opacity: 0; will-change: transform, opacity; }
+        .gsap-reveal {
+            opacity: 0;
+            will-change: transform, opacity;
+        }
 
         /* Header Styles */
         header {
@@ -216,6 +468,7 @@
             border-color: rgba(255, 255, 255, 0.1);
             will-change: background-color;
         }
+
         header.scrolled {
             background-color: rgba(13, 13, 15, 0.75);
             backdrop-filter: blur(12px);
@@ -224,7 +477,8 @@
             border-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Preloader Styles */
+        /* --- Final Preloader CSS (CORRECTED) --- */
+
         #preloader {
             position: fixed;
             inset: 0;
@@ -234,31 +488,48 @@
             place-content: center;
             transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .preloader-text {
+
+        /* MODIFIED RULE: 
+           This is now the only rule.
+        */
+        /* MODIFIED RULE: 
+           This is now the only rule.
+        */
+        .preloader-word {
+            /* This is the key: All words stack in the same grid cell */
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+
+            /* All the font styling remains the same */
+            display: block;
             font-family: 'Space Mono', monospace;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #E2E2E2;
-            position: relative;
+            font-weight: 1000;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            animation: text-flicker 3s linear infinite;
-        }
-        @keyframes text-flicker {
-            0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 70%, 100% {
-                opacity: .99;
-                text-shadow: -1px -1px 0 rgba(70, 100, 247, 0.5), 1px -1px 0 rgba(70, 100, 247, 0.5), -1px 1px 0 rgba(70, 100, 247, 0.5), 1px 1px 0 rgba(70, 100, 247, 0.5);
-            }
-            20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
-                opacity: 0.4;
-                text-shadow: none;
-            }
+            letter-spacing: 0.1em;
+            font-size: clamp(1.5rem, 6vw, 4rem);
+            padding: 0 1rem;
+            text-align: center;
+            height: 1.1em;
+            /* Give it a consistent height */
+            line-height: 1.1;
+
+            /* Clean white for all non-brand words */
+            color: #E2E2E2;
+            text-shadow: none;
+            /* No glow */
+
+            /* --- NEW "RAPID SPLICE" Start State --- */
+            /* Start invisible and slightly down */
+            opacity: 0;
+            transform: translateY(20px);
+            will-change: transform, opacity;
         }
 
         /* How it works */
         .step-icon {
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .step-icon.is-active {
             background-color: #2E78F3;
             color: white;
@@ -274,10 +545,12 @@
             height: 400px;
             perspective: 800px;
             /* overflow: visible; /* Reverted */
-            overflow: hidden; /* Keep hidden to prevent layout shifts */
+            overflow: hidden;
+            /* Keep hidden to prevent layout shifts */
             margin-top: 1rem;
             margin-bottom: 1rem;
         }
+
         @media (min-width: 768px) {
             .coverflow-container {
                 height: 450px;
@@ -287,6 +560,7 @@
                 margin-bottom: 0;
             }
         }
+
         .coverflow-track {
             position: absolute;
             width: 100%;
@@ -294,33 +568,70 @@
             transform-style: preserve-3d;
             will-change: transform;
         }
+
         .insight-tile-coverflow {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 280px;  /* <-- Increased mobile width */
-            height: 280px; /* <-- Increased mobile height */
+            width: 280px;
+            /* <-- Increased mobile width */
+            height: 280px;
+            /* <-- Increased mobile height */
             transform: translate(-50%, -50%);
             padding: 16px;
             cursor: pointer;
             will-change: transform, opacity;
         }
+
         @media (min-width: 768px) {
             .insight-tile-coverflow {
-                width: 360px;  /* <-- Increased desktop width */
-                height: 360px; /* <-- Increased desktop height */
+                width: 360px;
+                /* <-- Increased desktop width */
+                height: 360px;
+                /* <-- Increased desktop height */
                 padding: 24px;
             }
         }
+
         /* Adjust text sizes within coverflow tiles for mobile */
         /* Adjust text sizes within coverflow tiles for mobile */
-        .insight-tile-coverflow .text-xs { font-size: 0.8rem; } /* Increased */
-        .insight-tile-coverflow .text-2xl { font-size: 1.4rem; line-height: 1.3; margin-top: 0.25rem; } /* Increased */
-        .insight-tile-coverflow .text-5xl { font-size: 2.5rem; margin-top: 0.1rem;} /* Increased */
+        .insight-tile-coverflow .text-xs {
+            font-size: 0.8rem;
+        }
+
+        /* Increased */
+        .insight-tile-coverflow .text-2xl {
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin-top: 0.25rem;
+        }
+
+        /* Increased */
+        .insight-tile-coverflow .text-5xl {
+            font-size: 2.5rem;
+            margin-top: 0.1rem;
+        }
+
+        /* Increased */
         @media (min-width: 768px) {
-            .insight-tile-coverflow .text-xs { font-size: 0.9rem; } /* Increased */
-            .insight-tile-coverflow .text-2xl { font-size: 1.8rem; line-height: normal; margin-top: 1rem; } /* Increased */
-            .insight-tile-coverflow .text-5xl { font-size: 3.6rem; margin-top: 0.5rem; } /* Increased */
+            .insight-tile-coverflow .text-xs {
+                font-size: 0.9rem;
+            }
+
+            /* Increased */
+            .insight-tile-coverflow .text-2xl {
+                font-size: 1.8rem;
+                line-height: normal;
+                margin-top: 1rem;
+            }
+
+            /* Increased */
+            .insight-tile-coverflow .text-5xl {
+                font-size: 3.6rem;
+                margin-top: 0.5rem;
+            }
+
+            /* Increased */
         }
 
         /* Add padding inside parallax visual for mobile coverflow */
@@ -328,55 +639,98 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
+
         @media (min-width: 768px) {
             #feature-dashboard-2 .parallax-visual {
                 padding-left: 0;
                 padding-right: 0;
             }
         }
-    
+
 
         /* Trusted By Scroller */
         @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
         }
+
         .animate-scroll {
-            animation: scroll 40s linear infinite;
+            animation: scroll 30s linear infinite;
         }
+
         .logo-container:hover .animate-scroll {
             animation-play-state: paused;
         }
+
         .logo-item img {
-            max-height: 40px;
+            max-height: 80px;
             width: auto;
             transition: filter 0.3s ease-in-out;
             filter: grayscale(1) brightness(0.8) contrast(0.8);
-            height: 40px;
+            height: 60px;
             width: auto;
         }
+
         .logo-container:hover .logo-item img {
             filter: none;
         }
+
         .logo-item .logo-dark-invert {
             filter: grayscale(1) brightness(100);
         }
+
         .logo-container:hover .logo-item .logo-dark-invert {
             filter: invert(1);
         }
 
         /* Industry Engine Styles */
-        .revolving-container{ perspective: 1200px; }
-        .revolving-stage{ position: relative; width: 100%; transform-style: preserve-3d; }
-        .revolving-track{ position: absolute; inset: 0; transform-style: preserve-3d; will-change: transform; }
-        .revolving-tile{ position: absolute; top: 50%; left: 50%; transform-style: preserve-3d; will-change: transform; }
-        .tile-content{ backface-visibility: hidden; will-change: transform, opacity; }
-        .is-back .tile-content{ filter: blur(0.1px); }
-        .revolving-stage:hover{ cursor: grab; }
+        .revolving-container {
+            perspective: 1200px;
+        }
+
+        .revolving-stage {
+            position: relative;
+            width: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .revolving-track {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        .revolving-tile {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        .tile-content {
+            backface-visibility: hidden;
+            will-change: transform, opacity;
+        }
+
+        .is-back .tile-content {
+            filter: blur(0.1px);
+        }
+
+        .revolving-stage:hover {
+            cursor: grab;
+        }
 
         .feature-card-wrapper {
             transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .feature-card-wrapper::before {
             content: '';
             position: absolute;
@@ -395,10 +749,12 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
+
         .feature-card-wrapper:hover {
             transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
         }
+
         .feature-card-wrapper:hover::before {
             opacity: 1;
         }
@@ -410,9 +766,17 @@
             margin-left: 0.1em;
             color: #6FB1FC;
         }
+
         @keyframes blink {
-            from, to { opacity: 0 }
-            50% { opacity: 1 }
+
+            from,
+            to {
+                opacity: 0
+            }
+
+            50% {
+                opacity: 1
+            }
         }
 
         /* NEW: Accessibility Improvements */
@@ -430,45 +794,65 @@
 
         /* Ticket Animation Height Adjustment */
         #ticket-animation-container {
-            height: 24rem; /* 384px, base height */
-            min-height: 350px; /* Ensure minimum height */
+            height: 24rem;
+            /* 384px, base height */
+            min-height: 350px;
+            /* Ensure minimum height */
         }
-        @media (min-width: 640px) { /* sm breakpoint */
+
+        @media (min-width: 640px) {
+
+            /* sm breakpoint */
             #ticket-animation-container {
-                height: 26rem; /* 416px */
+                height: 26rem;
+                /* 416px */
             }
         }
-        @media (min-width: 1024px) { /* lg breakpoint */
+
+        @media (min-width: 1024px) {
+
+            /* lg breakpoint */
             #ticket-animation-container {
-                height: 28rem; /* 448px */
+                height: 28rem;
+                /* 448px */
             }
         }
 
         /* Feature 1 Floating Card Adjustments for Mobile */
-        @media (max-width: 640px) { /* Below sm breakpoint */
+        @media (max-width: 640px) {
+
+            /* Below sm breakpoint */
 
             /* Pushing cards further outwards horizontally */
 
             /* Bottom Left (To Customer Conversation) - This is the 2nd child */
             #feature-dashboard-1 .floating-card:nth-child(2) {
-                transform: translate(-5%, -75%) scale(0.8) !important; /* Increased positive X */
+                transform: translate(-5%, -75%) scale(0.8) !important;
+                /* Increased positive X */
             }
+
             /* Top Left (Dwell Time) - This is the 3rd child */
             #feature-dashboard-1 .floating-card:nth-child(3) {
-                transform: translate(-5%, -55%) scale(0.8) !important; /* Increased positive X */
+                transform: translate(-5%, -55%) scale(0.8) !important;
+                /* Increased positive X */
             }
+
             /* Top Right (Top Objection) - This is the 4th child */
             #feature-dashboard-1 .floating-card:nth-child(4) {
-                transform: translate(-95%, -55%) scale(0.8) !important; /* Increased negative X */
+                transform: translate(-95%, -55%) scale(0.8) !important;
+                /* Increased negative X */
             }
+
             /* Bottom Right (Missed Opportunity) - This is the 5th child */
             #feature-dashboard-1 .floating-card:nth-child(5) {
-                transform: translate(-95%, -75%) scale(0.8) !important; /* Increased negative X */
+                transform: translate(-95%, -75%) scale(0.8) !important;
+                /* Increased negative X */
             }
         }
 
 
         @media (prefers-reduced-motion: reduce) {
+
             /* Disable most animations */
             .gsap-reveal,
             .pillar-card .pillar-icon {
@@ -483,7 +867,13 @@
             }
 
             /* Simplify glass effect */
-            .glass-card, .card, .insight-card, .interaction-card, .insight-tile-coverflow, .revolving-tile .tile-content, .opportunity-card {
+            .glass-card,
+            .card,
+            .insight-card,
+            .interaction-card,
+            .insight-tile-coverflow,
+            .revolving-tile .tile-content,
+            .opportunity-card {
                 backdrop-filter: none;
                 background: rgba(26, 26, 28, 0.85);
             }
@@ -496,28 +886,32 @@
             /* Stop hero stream */
             #conversation-stream span {
                 animation: none;
-                opacity: 0.1; /* Show them statically but faded */
+                opacity: 0.1;
+                /* Show them statically but faded */
             }
 
-            /* Stop preloader flicker */
-            .preloader-text {
-                animation: none;
-            }
         }
     </style>
 </head>
+
 <body class="antialiased text-base">
 
+    <!-- Background Effects -->
     <div class="aurora-container">
         <div class="aurora-shape aurora-1"></div>
         <div class="aurora-shape aurora-2"></div>
     </div>
 
+    <!-- Preloader -->
     <div id="preloader">
-        <div class="preloader-text">Photios AI</div>
+        <span class="preloader-word gradient-text" id="word1">Photios AI</span>
+        <span class="preloader-word" id="word2" style="color: rgb(52, 211, 153);">Transform</span>
+        <span class="preloader-word" id="word3" style="color: rgb(250, 204, 21);">Offline</span>
+        <span class="preloader-word" id="word4" style="color: rgb(167, 139, 250);">Retail</span>
     </div>
 
     <div class="overflow-x-hidden">
+        <!-- Header -->
         <header class="fixed top-0 left-0 right-0 z-50 border-b">
             <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
                 <a href="#" class="flex items-center space-x-3">
@@ -552,7 +946,7 @@
             <!-- The 'hidden' class is toggled by JavaScript -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#win-more" class="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Solution</a>
+                    <a href="#revenue-suite" class="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Solution</a>
                     <a href="#how-it-works" class="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">How it works</a>
                 </div>
                 <div class="pt-4 pb-3 border-t border-gray-700">
@@ -565,115 +959,105 @@
             </div>
         </header>
 
+        <!-- Main Content -->
         <main>
-            <!-- Adjusted Hero Padding: py-20 sm:py-24 md:py-32 -->
+
+            <!-- Hero Section -->
             <section id="hero" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden py-20 sm:py-24 md:py-32">
-    <div id="conversation-stream" class="absolute inset-0 z-0 opacity-20 [mask-image:radial-gradient(ellipse_at_center,white_10%,transparent_70%)]" aria-hidden="true">
-    </div>
+                <div id="conversation-stream" class="absolute inset-0 z-0 opacity-20 [mask-image:radial-gradient(ellipse_at_center,white_10%,transparent_70%)]" aria-hidden="true">
+                </div>
+                <div class="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div class="mb-6 gsap-reveal inline-flex items-center gap-3">
+                        <span class="w-1 h-5 rounded-full hero-gradient-bar"></span>
+                        <span class="text-sm sm:text-base font-medium text-gray-200 tracking-wide">
+                            Transform Offline Retail
+                        </span>
+                    </div>
 
-    <div class="container mx-auto px-4 sm:px-6 relative z-10">
-        <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tighter text-gray-50 mb-6 gsap-reveal">
+                        Unlock the Revenue <br> Hidden in <span class="gradient-text" id="hero-typewriter"></span><span class="typewriter-cursor"></span>
+                    </h1>
 
-            <div class="mb-6 gsap-reveal">
-                <span class="inline-flex items-center bg-white/5 backdrop-blur-md border border-white/10 text-xs sm:text-sm font-medium text-gray-200 py-2 px-5 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline w-4 h-4 mr-2 -mt-px">
-                        <line x1="18" y1="20" x2="18" y2="10"></line>
-                        <line x1="12" y1="20" x2="12" y2="4"></line>
-                        <line x1="6" y1="20" x2="6" y2="14"></line>
-                    </svg>
-                    Transform Offline Retail
-                </span>
-            </div>
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 gsap-reveal leading-relaxed" data-gsap-delay="0.1">
+                        Photios AI analyzes 100% of your in-store sales conversations to diagnose lost sales, increase SOP adherance, and understand customers deeply.
+                    </p>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tighter text-gray-50 mb-6 gsap-reveal">
-                Unlock the Revenue <br> Hidden in <span class="gradient-text" id="hero-typewriter"></span><span class="typewriter-cursor"></span>
-            </h1>
-            
-            <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 gsap-reveal leading-relaxed" data-gsap-delay="0.1">
-                Photios AI analyzes 100% of your in-store sales conversations to diagnose lost sales, increase SOP adherance, and understand customers deeply.
-            </p>
+                    <div class="mt-8 sm:mt-10 gsap-reveal" data-gsap-delay="0.4">
+                        <a href="book-discovery-call.html" class="primary-cta text-white font-semibold text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full">
+                            Book Discovery Call
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-            <div class="mt-8 sm:mt-10 gsap-reveal" data-gsap-delay="0.4">
-                <a href="book-discovery-call.html" class="primary-cta text-white font-semibold text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full">
-                    Book Discovery Call
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-            <!-- Adjusted Section Padding: py-16 sm:py-20 -->
+            <!-- Impact Section -->
             <section id="win-more" class="py-16 sm:py-20">
                 <div class="container mx-auto px-4 sm:px-6">
                     <div class="text-center max-w-3xl mx-auto">
-                        <!-- Adjusted Heading Size: text-3xl sm:text-4xl md:text-5xl -->
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-gray-50 mb-4 sm:mb-6 gsap-reveal">
                             <span class="gradient-text">Real Impact</span> Photios AI is Driving
                         </h2>
-                        <!-- Adjusted P Size/Margin: text-lg sm:text-xl mb-12 sm:mb-16 -->
                         <p class="text-lg sm:text-xl text-gray-400 mb-12 sm:mb-16 leading-relaxed gsap-reveal" data-gsap-delay="0.1">
                             Measurable, tangible gains that retailers have unlocked.
                         </p>
                     </div>
-                    <!-- Adjusted Gap: gap-6 -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Pillar 1 -->
                         <div class="pillar-card glass-card p-6 flex flex-col gsap-reveal" data-gsap-delay="0.2" data-glow-color="var(--glow-color-blue)">
                             <div class="flex items-start justify-between mb-4">
-                                <!-- Adjusted Stat Size: text-4xl -->
                                 <h3 class="text-4xl font-bold stat-highlight leading-none" data-value="+50%">
-                                    <span class="sr-only">+50%</span> </h3>
-                                <i data-feather="check-circle" class="pillar-icon w-8 h-8 text-blue-400 flex-shrink-0"></i>
+                                    <span class="sr-only">+50%</span>
+                                </h3>
+                                <i data-feather="check-circle" class="pillar-icon w-8 h-8 text-blue-400 flex-shrink-0" aria-hidden="true"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-gray-100 mb-1">SOP Adherence</h4>
-                            <p class="text-sm text-gray-300 font-medium mb-3">Ensure your sales playbooks come alive in every pitch.</p>
-                            <p class="text-sm text-gray-400 leading-relaxed mt-auto">Photios AI measures real-time adherence to your SOPs so every interaction reflects your brand’s exact intent.</p>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-auto">Measure if your carefully-drafted SOPs and sales playbooks are even followed on the shop floor. Deviations lose sales. And you can’t improve what you can’t measure</p>
                         </div>
+                        <!-- Pillar 2 -->
                         <div class="pillar-card glass-card p-6 flex flex-col gsap-reveal" data-gsap-delay="0.3" data-glow-color="var(--glow-color-green)">
                             <div class="flex items-start justify-between mb-4">
-                                <!-- Adjusted Stat Size: text-4xl -->
                                 <h3 class="text-4xl font-bold stat-highlight leading-none" data-value="+5–10%">
-                                    <span class="sr-only">+5–10%</span> </h3>
-                                <i data-feather="trending-up" class="pillar-icon w-8 h-8 text-green-400 flex-shrink-0"></i>
+                                    <span class="sr-only">+5–10%</span>
+                                </h3>
+                                <i data-feather="trending-up" class="pillar-icon w-8 h-8 text-green-400 flex-shrink-0" aria-hidden="true"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-gray-100 mb-1">Store Revenue Growth</h4>
-                            <p class="text-sm text-gray-300 font-medium mb-3">Convert walk-outs into confident buyers.</p>
-                            <p class="text-sm text-gray-400 leading-relaxed mt-auto">Photios AI pinpoints why customers leave and enables instant, conversation-based coaching to boost conversions.</p>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-auto">Photios AI pinpoints why a walk-in left without buying, and enables near-real time analysis and manager-coaching to boost conversions and ticket size.</p>
                         </div>
+                        <!-- Pillar 3 -->
                         <div class="pillar-card glass-card p-6 flex flex-col gsap-reveal" data-gsap-delay="0.4" data-glow-color="var(--glow-color-yellow)">
                             <div class="flex items-start justify-between mb-4">
-                                <!-- Adjusted Stat Size: text-4xl -->
                                 <h3 class="text-4xl font-bold stat-highlight leading-none" data-value="10–25×">
-                                    <span class="sr-only">10–25×</span> </h3>
-                                <i data-feather="dollar-sign" class="pillar-icon w-8 h-8 text-yellow-400 flex-shrink-0"></i>
+                                    <span class="sr-only">10–25×</span>
+                                </h3>
+                                <i data-feather="dollar-sign" class="pillar-icon w-8 h-8 text-yellow-400 flex-shrink-0" aria-hidden="true"></i>
                             </div>
-                            <h4 class="text-lg font-semibold text-gray-100 mb-1">ROI on AI Investment</h4>
-                            <p class="text-sm text-gray-300 font-medium mb-3">Make every rupee deliver measurable impact.</p>
-                            <p class="text-sm text-gray-400 leading-relaxed mt-auto">With data-driven insights, Photios AI amplifies sales performance and turns every action into proven business growth.</p>
+                            <h4 class="text-lg font-semibold text-gray-100 mb-1">ROI on Photios AI</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-auto">Photios AI pinpoints why a walk-in left without buying, and enables near-real time analysis and manager-coaching to boost conversions and ticket size.</p>
                         </div>
+                        <!-- Pillar 4 -->
                         <div class="pillar-card glass-card p-6 flex flex-col gsap-reveal" data-gsap-delay="0.5" data-glow-color="var(--glow-color-purple)">
                             <div class="flex items-start justify-between mb-4">
-                                <!-- Adjusted Stat Size: text-4xl -->
                                 <h3 class="text-4xl font-bold stat-highlight leading-none" data-value="100%">
-                                    <span class="sr-only">100%</span> </h3>
-                                <i data-feather="eye" class="pillar-icon w-8 h-8 text-purple-400 flex-shrink-0"></i>
+                                    <span class="sr-only">100%</span>
+                                </h3>
+                                <i data-feather="eye" class="pillar-icon w-8 h-8 text-purple-400 flex-shrink-0" aria-hidden="true"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-gray-100 mb-1">Visibility Across Stores</h4>
-                            <p class="text-sm text-gray-300 font-medium mb-3">See every customer story without being onsite.</p>
-                            <p class="text-sm text-gray-400 leading-relaxed mt-auto">Photios AI gives complete visibility into store conversations—no travel, no guesswork, just clarity at scale.</p>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-auto">See every customer story without being onsite. No store travel. Sales staff conscious by your visits, doesn’t reflect the true picture.</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Adjusted Section Padding: py-16 sm:py-20 -->
+
+            <!-- Problem Section -->
             <section class="py-16 sm:py-20" id="problem-section">
                 <div class="container mx-auto px-4 sm:px-6">
-                    <!-- Adjusted Gap: gap-x-8 lg:gap-x-16 gap-y-10 -->
                     <div class="grid lg:grid-cols-2 gap-x-8 lg:gap-x-16 gap-y-10 items-center">
                         <div class="lg:pr-8 text-center lg:text-left">
-                            <!-- Adjusted Heading Size: text-3xl sm:text-4xl md:text-5xl -->
                             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-gray-50 mb-6 leading-tight gsap-reveal">
                                 You're flying blind in your most valuable channel.
                             </h2>
-                            <!-- Adjusted P Size/Margin: text-lg sm:text-xl mb-8 -->
                             <p class="text-lg sm:text-xl text-gray-400 mb-8 leading-relaxed gsap-reveal" data-gsap-delay="0.1">
                                 Offline retail is a black box. Insights are lost the moment a customer leaves.
                             </p>
@@ -700,7 +1084,7 @@
                                             <div class="w-full bg-gray-700 rounded-full h-2.5">
                                                 <div class="progress-bar bg-blue-500 h-2.5 rounded-full" style="width: 0%"></div>
                                             </div>
-                                            <p class="progress-label text-base font-bold text-blue-400">0%</p> <!-- Set to 0% initially -->
+                                            <p class="progress-label text-base font-bold text-blue-400">0%</p>
                                         </div>
                                     </div>
                                     <div id="insight-card-2" class="insight-card p-4">
@@ -724,39 +1108,32 @@
                 </div>
             </section>
 
-            <!-- Adjusted Section Padding: py-16 sm:py-20 -->
-            <section class="py-16 sm:py-20">
+            <!-- Features Section -->
+            <section id="revenue-suite" class="py-16 sm:py-20">
                 <div class="container mx-auto px-4 sm:px-6">
                     <div class="text-center max-w-3xl mx-auto">
-                        <!-- Adjusted Heading Size: text-3xl sm:text-4xl md:text-5xl -->
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-gray-50 mb-4 sm:mb-6 gsap-reveal">Photios AI Revenue <br> Intelligence Suite</h2>
-                        <!-- Adjusted P Size/Margin: text-lg sm:text-xl mb-12 sm:mb-16 -->
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-gray-50 mb-4 sm:mb-6 gsap-reveal"> Photios AI <br><span class="gradient-text">Revenue Intelligence Suite</span> </h2>
                         <p class="text-lg sm:text-xl text-gray-400 mb-12 sm:mb-16 leading-relaxed gsap-reveal" data-gsap-delay="0.1">
                             Photios AI models, trained on 100,000+ hours of real shop floor conversions, truly understand and share deep analysis of every sales conversation.
                         </p>
                     </div>
-                    <!-- Adjusted Gap: space-y-10 sm:space-y-12 -->
                     <div class="space-y-10 sm:space-y-12">
-                        <!-- Adjusted padding: p-6 sm:p-8 -->
+                        <!-- Feature 1 -->
                         <div class="feature-card-wrapper card relative overflow-hidden p-6 sm:p-8 gsap-reveal">
-                            <!-- Adjusted number size: text-[8rem] sm:text-[10rem] lg:text-[12rem] -->
                             <div class="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 text-[8rem] sm:text-[10rem] lg:text-[12rem] font-black text-white/5 select-none z-0" aria-hidden="true">01</div>
-                            <!-- Adjusted Gap: gap-6 md:gap-8 lg:gap-16 -->
                             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center">
                                 <div class="relative z-10 text-center lg:text-left mb-6 lg:mb-0">
-                                    <!-- Adjusted Heading Size: text-2xl sm:text-3xl md:text-4xl -->
                                     <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100 mb-4 sm:mb-6">100% visibility into sales, with deep diagnostics</h3>
-                                    <!-- Adjusted P Size: text-base sm:text-lg -->
                                     <p class="text-base sm:text-lg text-gray-400 leading-relaxed">Drill down into why walk-in conversion rates are low - by region, salesperson, common objections, or customer intent.</p>
                                 </div>
-                                <!-- Adjusted Min Height: min-h-[300px] sm:min-h-[350px] lg:min-h-[450px] -->
                                 <div class="parallax-visual min-h-[300px] sm:min-h-[350px] lg:min-h-[450px] flex items-center justify-center">
                                     <div class="w-full" id="feature-dashboard-1">
                                         <div class="relative w-full max-w-lg mx-auto h-auto">
                                             <div class="relative">
-                                                <div class="w-full p-4 interaction-card flex flex-col justify-between z-10 relative">
+                                                <div class="w-full p-4 sm:p-6 interaction-card flex flex-col justify-between z-10 relative">
+
                                                     <div>
-                                                        <div class="flex items-center justify-between">
+                                                        <div class="flex justify-between items-start gap-2">
                                                             <div class="flex items-center gap-2">
                                                                 <span class="w-10 h-10 rounded-full bg-red-900 flex items-center justify-center text-red-300 text-lg font-bold">S</span>
                                                                 <div>
@@ -764,53 +1141,49 @@
                                                                     <p class="text-xs text-gray-400">Times Square, NYC</p>
                                                                 </div>
                                                             </div>
-                                                            <span id="conversion-lost-tag" class="text-xs font-semibold py-1 px-3 rounded-full" style="background-color: #450a0a; color: #f87171;">Conversion Lost</span>
+                                                            <span id="conversion-lost-tag" class="text-xs font-semibold py-1 px-3 rounded-full flex-shrink-0" style="background-color: #450a0a; color: #f87171;">Conversion Lost</span>
                                                         </div>
-                                                        <p class="text-sm text-gray-300 mt-2 italic">"It's a bit more than I was planning to spend..."</p>
+
                                                         <div class="mt-3 pt-3 border-t border-white/10">
                                                             <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Reason for lost sale</p>
                                                             <p class="text-sm text-gray-200 mt-1 leading-snug">Customer expressed price sensitivity. Objection was not successfully handled, leading to a lost conversion.</p>
                                                         </div>
                                                     </div>
+
                                                     <div class="w-full mt-4">
                                                         <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Key Moments</p>
+
+                                                        <p class="text-sm text-gray-300 mt-2 italic">"It's a bit more than I was planning to spend..."</p>
+
                                                         <div class="h-10 w-full mt-1 flex items-end gap-1" id="fd1-spark-2">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="floating-card absolute p-2.5 rounded-lg glass-card" style="top: 100%; left: 0; transform: translate(-40%, -80%) scale(1); z-index: 19;" aria-hidden="true">
-                                                    <div class="flex items-center gap-2">
-                                                        <i data-feather="pie-chart" class="w-5 h-5 text-red-400"></i>
-                                                        <div>
-                                                            <p class="text-xs text-gray-400">Listen To Customer Conversation</p>
-                                                        </div>
+                                                <div class="floating-card absolute p-2 rounded-lg glass-card w-32" style="top: 100%; left: 0; transform: translate(-30%, -60%) scale(0.9); z-index: 19;" aria-hidden="true">
+                                                    <i data-feather="headphones" class="w-4 h-4 text-red-400" aria-hidden="true"></i>
+                                                    <div class="mt-1">
+                                                        <p class="text-xs text-gray-400">Listen To Customer Conversation</p>
                                                     </div>
                                                 </div>
-                                                <div class="floating-card absolute p-2 rounded-lg glass-card" style="top: 0; left: 0; transform: translate(-40%, -40%) scale(0.9); z-index: 19;" aria-hidden="true">
-                                                    <div class="flex items-center gap-2">
-                                                        <i data-feather="clock" class="w-4 h-4 text-purple-400"></i>
-                                                        <div>
-                                                            <p class="text-xs text-gray-400">Dwell Time</p>
-                                                            <p class="text-sm font-semibold text-gray-100">20:32 min</p>
-                                                        </div>
+                                                <div class="floating-card absolute p-2 rounded-lg glass-card w-32" style="top: 0; left: 0; transform: translate(-30%, -50%) scale(0.9); z-index: 19;" aria-hidden="true">
+                                                    <i data-feather="clock" class="w-4 h-4 text-purple-400" aria-hidden="true"></i>
+                                                    <div class="mt-1">
+                                                        <p class="text-xs text-gray-400">Dwell Time</p>
+                                                        <p class="text-sm font-semibold text-gray-100">20:32 min</p>
                                                     </div>
                                                 </div>
-                                                <div class="floating-card absolute p-2 rounded-lg glass-card" style="top: 0; left: 100%; transform: translate(-60%, -40%) scale(0.95); z-index: 19;" aria-hidden="true">
-                                                    <div class="flex items-center gap-2">
-                                                        <i data-feather="message-circle" class="w-4 h-4 text-yellow-400"></i>
-                                                        <div>
-                                                            <p class="text-xs text-gray-400">Top Unresolved Objection</p>
-                                                            <p class="text-sm font-semibold text-gray-100">Pricing</p>
-                                                        </div>
+                                                <div class="floating-card absolute p-2 rounded-lg glass-card w-32" style="top: 0; left: 100%; transform: translate(-70%, -50%) scale(0.9); z-index: 19;" aria-hidden="true">
+                                                    <i data-feather="message-circle" class="w-4 h-4 text-yellow-400" aria-hidden="true"></i>
+                                                    <div class="mt-1">
+                                                        <p class="text-xs text-gray-400">Top Unresolved Objection</p>
+                                                        <p class="text-sm font-semibold text-gray-100">Pricing</p>
                                                     </div>
                                                 </div>
-                                                <div class="floating-card absolute p-2 rounded-lg glass-card" style="top: 100%; left: 100%; transform: translate(-60%, -60%) scale(0.85); z-index: 19;" aria-hidden="true">
-                                                    <div class="flex items-center gap-2">
-                                                        <i data-feather="plus-circle" class="w-4 h-4 text-blue-400"></i>
-                                                        <div>
-                                                            <p class="text-xs text-gray-400">Missed Opportunity</p>
-                                                            <p class="text-sm font-semibold text-gray-100">Cross Sale</p>
-                                                        </div>
+                                                <div class="floating-card absolute p-2 rounded-lg glass-card w-32" style="top: 100%; left: 100%; transform: translate(-70%, -60%) scale(0.9); z-index: 19;" aria-hidden="true">
+                                                    <i data-feather="plus-circle" class="w-4 h-4 text-blue-400" aria-hidden="true"></i>
+                                                    <div class="mt-1">
+                                                        <p class="text-xs text-gray-400">Missed Opportunity</p>
+                                                        <p class="text-sm font-semibold text-gray-100">Cross Sale</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -819,6 +1192,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Feature 2 -->
                         <div class="feature-card-wrapper card relative overflow-hidden p-6 sm:p-8 gsap-reveal">
                             <div class="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 text-[8rem] sm:text-[10rem] lg:text-[12rem] font-black text-white/5 select-none z-0 text-right" aria-hidden="true">02</div>
                             <div class="grid lg:grid-cols-2 gap-0 md:gap-8 lg:gap-16 items-center">
@@ -826,57 +1200,47 @@
                                     <div id="feature-dashboard-2" class="w-full">
                                         <div class="coverflow-container">
                                             <div class="coverflow-track">
-                                                <!-- Content is generated by JavaScript -->
+                                                <!-- Tiles injected by JS -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="relative z-10 text-center lg:text-left mb-2">
-                                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100 mb-4 sm:mb-6">Receive insights precisely mapped to your sales engine</h3>
-                                    <p class="text-base sm:text-lg text-gray-400 leading-relaxed">Photios AI’s proprietary SLMs (Small Language Models) adapt to the unique sales dynamics of each retail industry, from jewellery to furniture to fashion.</p>
+                                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100 mb-4 sm:mb-6">Understand your customers like never before</h3>
+                                    <p class="text-base sm:text-lg text-gray-400 leading-relaxed">Decode objections, unmet needs, product preferences, and competitor mentions straight from daily conversations. Know exactly why customers walk away and what brings them back.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Adjusted padding: p-6 sm:p-8 -->
+                        <!-- Feature 3 -->
                         <div class="feature-card-wrapper card relative overflow-hidden p-6 sm:p-8 gsap-reveal">
-                            <!-- Adjusted number size: text-[8rem] sm:text-[10rem] lg:text-[12rem] -->
                             <div class="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 text-[8rem] sm:text-[10rem] lg:text-[12rem] font-black text-white/5 select-none z-0" aria-hidden="true">03</div>
-                            <!-- Adjusted Gap: gap-6 md:gap-8 lg:gap-16 -->
                             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center">
                                 <div class="relative z-10 text-center lg:text-left">
-                                    <!-- Adjusted Heading Size: text-2xl sm:text-3xl md:text-4xl -->
                                     <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100 mb-4 sm:mb-6">Increase the average ticket size of each sale</h3>
-                                    <!-- Adjusted P Size: text-base sm:text-lg -->
                                     <p class="text-base sm:text-lg text-gray-400 leading-relaxed">Stop leaving money on the table. Catch missed upsell and cross-sell gaps to unlock adjacent category pitches and high-ticket product plays.</p>
                                 </div>
-                                <div class="parallax-visual min-h-[350px] flex items-center justify-center"> <!-- Reduced min-height slightly -->
+                                <div class="parallax-visual min-h-[350px] flex items-center justify-center">
                                     <div class="w-full" id="feature-dashboard-3">
-                                        <!-- Adjusted height via style in head -->
                                         <div id="ticket-animation-container" class="relative w-full flex flex-col items-center justify-center font-sans">
-                                            <!-- Content is generated by JavaScript -->
+                                            <!-- Ticket animation injected by JS -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Adjusted padding: p-6 sm:p-8 -->
+                        <!-- Feature 4 -->
                         <div class="feature-card-wrapper card relative overflow-hidden p-6 sm:p-8 gsap-reveal">
-                            <!-- Adjusted number size: text-[8rem] sm:text-[10rem] lg:text-[12rem] -->
                             <div class="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 text-[8rem] sm:text-[10rem] lg:text-[12rem] font-black text-white/5 select-none z-0 text-right" aria-hidden="true">04</div>
-                            <!-- Adjusted Gap: gap-6 md:gap-8 lg:gap-16 -->
                             <div class="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center">
-                                <!-- Adjusted Min Height: min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] -->
                                 <div class="order-last lg:order-first parallax-visual min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] flex items-center justify-center">
                                     <div id="feature-dashboard-4" class="w-full">
                                         <div class="revolving-container w-full">
-                                            <!-- Adjusted Height: h-[350px] sm:h-[400px] md:h-[500px] -->
                                             <div class="revolving-stage w-full h-[350px] sm:h-[400px] md:h-[500px]">
                                                 <div class="revolving-track" id="revTrack">
                                                     <div class="revolving-tile">
                                                         <div class="tile-content p-6 flex flex-col items-center justify-center text-center w-48 sm:w-56">
                                                             <div class="w-12 h-12 mx-auto mb-3">
-                                                                <i data-feather="shopping-bag" class="w-10 h-10 text-pink-400"></i>
+                                                                <i data-feather="shopping-bag" class="w-10 h-10 text-pink-400" aria-hidden="true"></i>
                                                             </div>
                                                             <h4 class="text-xl font-bold text-gray-100">Luxury Clothing </h4>
                                                             <p class="text-gray-400 mt-2 text-sm">Photios AI understands price objection should be handle by value proposition not discounts.</p>
@@ -885,7 +1249,7 @@
                                                     <div class="revolving-tile">
                                                         <div class="tile-content p-6 flex flex-col items-center justify-center text-center w-48 sm:w-56">
                                                             <div class="w-12 h-12 mx-auto mb-3">
-                                                                <i data-feather="home" class="w-10 h-10 text-green-400"></i>
+                                                                <i data-feather="home" class="w-10 h-10 text-green-400" aria-hidden="true"></i>
                                                             </div>
                                                             <h4 class="text-xl font-bold text-gray-100">Home Decor</h4>
                                                             <p class="text-gray-400 mt-2 text-sm">Photios AI understands the waranty and after service offerings of the company on recliners.</p>
@@ -894,7 +1258,7 @@
                                                     <div class="revolving-tile">
                                                         <div class="tile-content p-6 flex flex-col items-center justify-center text-center w-48 sm:w-56">
                                                             <div class="w-12 h-12 mx-auto mb-3">
-                                                                <i data-feather="truck" class="w-10 h-10 text-red-400"></i>
+                                                                <i data-feather="truck" class="w-10 h-10 text-red-400" aria-hidden="true"></i>
                                                             </div>
                                                             <h4 class="text-xl font-bold text-gray-100">Automotive</h4>
                                                             <p class="text-gray-400 mt-2 text-sm">Photios AI understands the exact moment when a RSA or additional warranty can be pitched.</p>
@@ -903,7 +1267,7 @@
                                                     <div class="revolving-tile">
                                                         <div class="tile-content p-6 flex flex-col items-center justify-center text-center w-48 sm:w-56">
                                                             <div class="w-12 h-12 mx-auto mb-3">
-                                                                <i data-feather="gift" class="w-10 h-10 text-indigo-400"></i>
+                                                                <i data-feather="gift" class="w-10 h-10 text-indigo-400" aria-hidden="true"></i>
                                                             </div>
                                                             <h4 class="text-xl font-bold text-gray-100">Jewelry</h4>
                                                             <p class="text-gray-400 mt-2 text-sm">Photios AI finds out that what is the motivation for a client to purchase a product.</p>
@@ -915,10 +1279,8 @@
                                     </div>
                                 </div>
                                 <div class="relative z-10 text-center lg:text-left">
-                                    <!-- Adjusted Heading Size: text-2xl sm:text-3xl md:text-4xl -->
                                     <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100 mb-4 sm:mb-6">Receive insights precisely mapped to your sales engine</h3>
-                                    <!-- Adjusted P Size: text-base sm:text-lg -->
-                                    <p class="text-base sm:text-lg text-gray-400 leading-relaxed">Photios AI’s proprietary LLMs adapt to the unique sales dynamics of each retail vertical—from beauty to automotive.</p>
+                                    <p class="text-base sm:text-lg text-gray-400 leading-relaxed">Photios AI’s proprietary SLMs adapt to each industry’s unique sales dynamics from jewellery to furniture to fashion, with a dedicated success manager to help you easily manage and extract insights from your dashboards.</p>
                                 </div>
                             </div>
                         </div>
@@ -926,78 +1288,95 @@
                 </div>
             </section>
 
+            <!-- How It Works Section -->
             <section id="how-it-works" class="py-16 sm:py-20">
-    <div class="container mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-gray-50 mb-4 sm:mb-6 gsap-reveal">Simple Setup, Powerful Results</h2>
-            <p class="text-lg text-gray-400 mb-10 sm:mb-12 leading-relaxed gsap-reveal" data-gsap-delay="0.1">
-                From the shop floor to your dashboard in three simple steps.
-            </p>
-        </div>
-        <div class="relative max-w-4xl mx-auto">
-            <div class="absolute left-6 md:left-1/2 top-12 bottom-12 w-0.5 bg-gray-800 -translate-x-1/2" aria-hidden="true"></div>
-            <div id="how-it-works-progress" class="absolute left-6 md:left-1/2 top-12 w-0.5 bg-blue-500 -translate-x-1/2" style="height: 0;" aria-hidden="true"></div>
-            <div class="space-y-8 md:space-y-10">
-                
-                <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center relative">
-                    <div class="pl-20 md:pl-0 md:pr-12 gsap-reveal text-center md:text-left order-last md:order-first">
-                        <h3 class="text-xl font-bold text-gray-100 mb-2">Capture conversations</h3>
-                        <p class="text-gray-400 leading-relaxed">AI Pin captures real-time customer interactions without disrupting retail operations, securely transmitting data.</p>
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="text-center max-w-3xl mx-auto">
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-gray-50 mb-4 sm:mb-6 gsap-reveal">Simple Setup, Powerful Results</h2>
+                        <p class="text-lg text-gray-400 mb-10 sm:mb-12 leading-relaxed gsap-reveal" data-gsap-delay="0.1">
+                            From the shop floor to your dashboard in three simple steps.
+                        </p>
                     </div>
-                    <div class="step-icon w-12 h-12 bg-[#1A1A1C] border-2 border-gray-700 rounded-full absolute left-6 md:left-1/2 flex items-center justify-center font-bold text-blue-400" style="top: 50%; transform: translateY(-50%) translateX(-50%);">1</div>
-                    <div class="pl-20 md:pl-12 gsap-reveal min-h-[150px] flex items-center justify-center" data-gsap-delay="0.1">
-                        <div class="w-44 h-44 sm:w-56 sm:h-56 glass-card p-6 flex flex-col items-center justify-center">
-                            <svg id="icon-step-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16 sm:w-24 sm:h-24 text-blue-400" aria-label="AI Pin Icon">
-                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                            </svg>
-                            <p class="text-gray-300 mt-3 font-semibold text-center">AI Pin Capture</p>
-                        </div>
-                    </div>
-                </div>
+                    <div class="relative max-w-4xl mx-auto">
+                        <div class="absolute left-6 md:left-1/2 top-12 bottom-12 w-0.5 bg-gray-800 -translate-x-1/2" aria-hidden="true"></div>
+                        <div id="how-it-works-progress" class="absolute left-6 md:left-1/2 top-12 w-0.5 bg-blue-500 -translate-x-1/2" style="height: 0;" aria-hidden="true"></div>
+                        <div class="space-y-8 md:space-y-10">
 
-                <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center relative">
-                    <div class="pl-20 md:pl-0 md:pr-12 gsap-reveal min-h-[150px] flex items-center justify-center md:order-first" data-gsap-delay="0.1">
-                        <div class="w-44 h-44 sm:w-56 sm:h-56 glass-card p-6 flex flex-col items-center justify-center">
-                            <svg id="icon-step-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16 sm:w-24 sm:h-24 text-blue-400" aria-label="AI Analysis Icon">
-                                <line class="bar" x1="18" y1="20" x2="18" y2="10"></line>
-                                <line class="bar" x1="12" y1="20" x2="12" y2="4"></line>
-                                <line class="bar" x1="6" y1="20" x2="6" y2="14"></line>
-                            </svg>
-                            <p class="text-gray-300 mt-3 font-semibold text-center">AI Analysis</p>
-                        </div>
-                    </div>
-                    <div class="step-icon w-12 h-12 bg-[#1A1A1C] border-2 border-gray-700 rounded-full absolute left-6 md:left-1/2 flex items-center justify-center font-bold text-blue-400" style="top: 50%; transform: translateY(-50%) translateX(-50%);">2</div>
-                    <div class="pl-20 md:pl-12 gsap-reveal text-center md:text-left">
-                        <h3 class="text-xl font-bold text-gray-100 mb-2">AI-powered analysis</h3>
-                        <p class="text-gray-400 leading-relaxed">Proprietary Agentic AI framework analyses the conversations by industry and client fine-tuned SLMs.</p>
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center relative">
-                    <div class="pl-20 md:pl-0 md:pr-12 gsap-reveal text-center md:text-left order-last md:order-first">
-                        <h3 class="text-xl font-bold text-gray-100 mb-2">Role-based insights</h3>
-                        <p class="text-gray-400 leading-relaxed">Multi-tier, role-based dashboards enhance decision-making with targeted, data-backed feedback.</p>
-                    </div>
-                    <div class="step-icon w-12 h-12 bg-[#1A1A1C] border-2 border-gray-700 rounded-full absolute left-6 md:left-1/2 flex items-center justify-center font-bold text-blue-400" style="top: 50%; transform: translateY(-50%) translateX(-50%);">3</div>
-                    <div class="pl-20 md:pl-12 gsap-reveal min-h-[150px] flex items-center justify-center" data-gsap-delay="0.1">
-                        <div class="w-44 h-44 sm:w-56 sm:h-56 glass-card p-6 flex flex-col items-center justify-center">
-                            <svg id="icon-step-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16 sm:w-24 sm:h-24 text-blue-400" aria-label="Dashboard Icon">
-                                <rect class="layout-bg" x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line class="layout-line" x1="3" y1="9" x2="21" y2="9"></line>
-                                <line class="layout-line" x1="9" y1="21" x2="9" y2="9"></line>
-                            </svg>
-                            <p class="text-gray-300 mt-3 font-semibold text-center">Actionable Dashboards</p>
-                        </div>
-                    </div>
-                </div>
+                            <!-- Step 1 -->
+                            <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center relative">
+                                <div class="pl-20 md:pl-0 md:pr-12 gsap-reveal text-center md:text-left order-last md:order-first">
+                                    <h3 class="text-xl font-bold text-gray-100 mb-2">Capture conversations</h3>
+                                    <p class="text-gray-400 leading-relaxed">AI Pin captures real-time customer interactions without disrupting retail operations, securely transmitting data.</p>
+                                </div>
+                                <div class="step-icon w-12 h-12 bg-[#1A1A1C] border-2 border-gray-700 rounded-full absolute left-6 md:left-1/2 flex items-center justify-center font-bold text-blue-400" style="top: 50%; transform: translateY(-50%) translateX(-50%);">1</div>
+                                <div class="pl-20 md:pl-12 gsap-reveal min-h-[150px] flex items-center justify-center" data-gsap-delay="0.1">
+                                    <div class="w-44 h-44 sm:w-56 sm:h-56 glass-card p-6 flex flex-col items-center justify-center overflow-hidden">
+                                        <div class="w-16 h-16 sm:w-24 sm:h-24 text-blue-400">
+                                            <svg class="animated-pin-collect w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                                <g class="zoom-target">
+                                                    <path d="M 30 15 L 45 40 L 50 35 L 50 20 Z" stroke="currentColor" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M 70 15 L 55 40 L 50 35 L 50 20 Z" stroke="currentColor" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M 45 40 L 50 48 L 55 40 L 52 48 L 50 80 L 48 48 Z" stroke="currentColor" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <rect class="pin-body" x="30" y="50" width="10" height="15" rx="2" fill="currentColor" />
+                                                    <circle class="pin-ring" cx="35" cy="57.5" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+                                                    <circle class="pin-ring" cx="35" cy="57.5" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+                                                    <circle class="pin-ring" cx="35" cy="57.5" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-300 mt-3 font-semibold text-center">AI Pin Capture</p>
+                                    </div>
+                                </div>
+                            </div>
 
-            </div>
-        </div>
-    </div>
-</section>
-            <!-- TRUSTED BY SECTION -->
-            <!-- Adjusted Section Padding: py-12 sm:py-16 -->
+                            <!-- Step 2 -->
+                            <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center relative">
+                                <div class="pl-20 md:pl-0 md:pr-12 gsap-reveal min-h-[150px] flex items-center justify-center md:order-first" data-gsap-delay="0.1">
+                                    <div class="w-44 h-44 sm:w-56 sm:h-56 glass-card p-6 flex flex-col items-center justify-center">
+                                        <div class="w-16 h-16 sm:w-24 sm:h-24 text-blue-400">
+                                            <svg class="animated-bar-chart w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="AI Analysis Icon">
+                                                <line class="bar" x1="18" y1="20" x2="18" y2="10"></line>
+                                                <line class="bar" x1="12" y1="20" x2="12" y2="4"></line>
+                                                <line class="bar" x1="6" y1="20" x2="6" y2="14"></line>
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-300 mt-3 font-semibold text-center">AI Analysis</p>
+                                    </div>
+                                </div>
+                                <div class="step-icon w-12 h-12 bg-[#1A1A1C] border-2 border-gray-700 rounded-full absolute left-6 md:left-1/2 flex items-center justify-center font-bold text-blue-400" style="top: 50%; transform: translateY(-50%) translateX(-50%);">2</div>
+                                <div class="pl-20 md:pl-12 gsap-reveal text-center md:text-left">
+                                    <h3 class="text-xl font-bold text-gray-100 mb-2">AI-powered analysis</h3>
+                                    <p class="text-gray-400 leading-relaxed">Proprietary Agentic AI framework analyses the conversations by industry and client fine-tuned SLMs.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center relative">
+                                <div class="pl-20 md:pl-0 md:pr-12 gsap-reveal text-center md:text-left order-last md:order-first">
+                                    <h3 class="text-xl font-bold text-gray-100 mb-2">Role-based insights</h3>
+                                    <p class="text-gray-400 leading-relaxed">Multi-tier, role-based dashboards and enhance decision-making with targeted, data-backed feedback.</p>
+                                </div>
+                                <div class="step-icon w-12 h-12 bg-[#1A1A1C] border-2 border-gray-700 rounded-full absolute left-6 md:left-1/2 flex items-center justify-center font-bold text-blue-400" style="top: 50%; transform: translateY(-50%) translateX(-50%);">3</div>
+                                <div class="pl-20 md:pl-12 gsap-reveal min-h-[150px] flex items-center justify-center" data-gsap-delay="0.1">
+                                    <div class="w-44 h-44 sm:w-56 sm:h-56 glass-card p-6 flex flex-col items-center justify-center">
+                                        <div class="w-16 h-16 sm:w-24 sm:h-24 text-blue-400">
+                                            <svg class="animated-dashboard w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Dashboard Icon">
+                                                <rect class="layout-bg" x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                <line class="layout-line" x1="3" y1="9" x2="21" y2="9"></line>
+                                                <line class="layout-line" x1="9" y1="21" x2="9" y2="9"></line>
+                                            </svg>
+                                        </div>
+                                        <p class="text-gray-300 mt-3 font-semibold text-center">Actionable Dashboards</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clients & Partners Section -->
             <section class="py-12 sm:py-16">
                 <div class="container mx-auto px-4 sm:px-6 text-center">
                     <h2 class="text-base sm:text-lg font-semibold text-gray-500 uppercase tracking-widest gsap-reveal">
@@ -1007,85 +1386,81 @@
                     <div class="logo-container relative mt-10 sm:mt-12 w-full max-w-7xl mx-auto overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]">
                         <div class="flex w-max animate-scroll items-center">
                             <!-- Logos Start -->
-                            <!-- PERFORMANCE FIX: Added loading="lazy" -->
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/3YYZsJwB/sleepcompany.jpg" alt="The Sleep Company" loading="lazy" />
+                                <img src="https://i.ibb.co/xKzxmY1F/tsc-2.png" alt="The Sleep Company" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/XxWgN4BP/logo-new.webp" alt="Zodiac" loading="lazy" />
+                                <img src="https://i.ibb.co/JR2J8BYh/zodiac.png" alt="Zodiac" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/gZfwvNC8/Nykaa-New-Logo-svg.png" alt="Nykaa" loading="lazy" />
+                                <img src="https://i.ibb.co/zh3v0JzS/nykaa.png" alt="Nykaa" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/LzGW9WrV/Cars24.png" alt="CARS24" loading="lazy" />
+                                <img src="https://i.ibb.co/9khb4xxt/cars24.png" alt="CARS24" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/PsLqFS3V/Image-21.jpg" alt="Limelight Diamonds" loading="lazy" />
+                                <img src="https://i.ibb.co/HDHdDP1H/limelight.png" alt="Limelight Diamonds" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" loading="lazy" />
+                                <img src="https://i.ibb.co/70KW6Sf/aws-activate.jpg" alt="AWS Activate" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/TBY10dvL/286-2861148-nvidia-inception-program-logo-hd-png-download.jpg" alt="NVIDIA Inception" loading="lazy" />
+                                <img src="https://i.ibb.co/zhJkFn8X/nvidia-inception.png" alt="NVIDIA Inception" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/8L13ZBjR/647549ba72afb4ca402260f4-deepgram.png" alt="Deepgram" loading="lazy" />
+                                <img src="https://i.ibb.co/FM35fMq/deepgram.png" alt="Deepgram" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" loading="lazy" />
+                                <img src="https://i.ibb.co/HT9R22cp/msft.png" alt="Microsoft" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" loading="lazy" />
+                                <img src="https://i.ibb.co/BH1BXwH2/github.png" alt="GitHub" />
                             </div>
 
                             <!-- Duplicate set for seamless scroll -->
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/3YYZsJwB/sleepcompany.jpg" alt="The Sleep Company" loading="lazy" />
+                                <img src="https://i.ibb.co/xKzxmY1F/tsc-2.png" alt="The Sleep Company" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/XxWgN4BP/logo-new.webp" alt="Zodiac" loading="lazy" />
+                                <img src="https://i.ibb.co/JR2J8BYh/zodiac.png" alt="Zodiac" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/gZfwvNC8/Nykaa-New-Logo-svg.png" alt="Nykaa" loading="lazy" />
+                                <img src="https://i.ibb.co/zh3v0JzS/nykaa.png" alt="Nykaa" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/LzGW9WrV/Cars24.png" alt="CARS24" loading="lazy" />
+                                <img src="https://i.ibb.co/9khb4xxt/cars24.png" alt="CARS24" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/PsLqFS3V/Image-21.jpg" alt="Limelight Diamonds" loading="lazy" />
+                                <img src="https://i.ibb.co/HDHdDP1H/limelight.png" alt="Limelight Diamonds" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" loading="lazy" />
+                                <img src="https://i.ibb.co/70KW6Sf/aws_activate.jpg" alt="AWS Activate" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/TBY10dvL/286-2861148-nvidia-inception-program-logo-hd-png-download.jpg" alt="NVIDIA Inception" loading="lazy" />
+                                <img src="https://i.ibb.co/zhJkFn8X/nvidia_inception.png" alt="NVIDIA Inception" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://i.ibb.co/8L13ZBjR/647549ba72afb4ca402260f4-deepgram.png" alt="Deepgram" loading="lazy" />
+                                <img src="https://i.ibb.co/FM35fMq/deepgram.png" alt="Deepgram" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" loading="lazy" />
+                                <img src="https://i.ibb.co/HT9R22cp/msft.png" alt="Microsoft" />
                             </div>
                             <div class="logo-item flex-shrink-0 w-auto px-6 sm:px-10 py-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" loading="lazy" />
+                                <img src="https://i.ibb.co/BH1BXwH2/github.png" alt="GitHub" />
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Adjusted Section Padding: py-16 sm:py-20 -->
+            <!-- CTA Section -->
             <section id="cta" class="py-16 sm:py-20" style="background: linear-gradient(180deg, transparent 0%, rgba(46, 120, 243, 0.1) 100%);">
                 <div class="container mx-auto px-4 sm:px-6 text-center">
                     <div class="max-w-2xl mx-auto">
-                        <!-- Adjusted Heading Size: text-3xl sm:text-4xl md:text-5xl -->
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-gray-50 mb-4 sm:mb-6 gsap-reveal">See Photios AI In Action</h2>
-                        <!-- Adjusted P Size/Margin: text-lg mb-8 sm:mb-10 -->
                         <p class="text-lg text-gray-400 mb-8 sm:mb-10 leading-relaxed gsap-reveal" data-gsap-delay="0.1">
                             Connect with our team to see how Photios AI can help you achieve your sales targets faster!
                         </p>
-                        <!-- Adjusted CTA Padding/Size: text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 -->
                         <a href="book-discovery-call.html" class="primary-cta text-white font-semibold text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full inline-block gsap-reveal" data-gsap-delay="0.2">
                             Book Discovery Call
                         </a>
@@ -1094,23 +1469,21 @@
             </section>
         </main>
 
+        <!-- Footer -->
         <footer class="border-t border-gray-800 bg-[#0D0D0F]">
-            <div class="container mx-auto px-4 sm:px-6 py-10 sm:py-12"> <!-- Adjusted padding -->
-                <!-- Adjusted Gap: gap-6 md:gap-8 -->
+            <div class="container mx-auto px-4 sm:px-6 py-10 sm:py-12">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
                     <div class="md:col-span-1">
                         <div class="flex items-center space-x-3 mb-2">
-                            <!-- UPDATED LOGO -->
                             <img src="logo.svg" alt="Photios AI Logo" class="h-7 w-auto">
                         </div>
                         <p class="text-gray-500 text-sm">The Future of Retail Intelligence.</p>
                     </div>
-                    <!-- Adjusted Gap: gap-6 md:gap-8 -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:col-span-3 gap-6 md:gap-8">
                         <div>
                             <h4 class="font-semibold text-gray-200 mb-3">Solution</h4>
                             <ul class="space-y-2">
-                                <li><a href="#win-more" class="text-gray-400 hover:text-white">Revenue Suite</a></li>
+                                <li><a href="#revenue-suite" class="text-gray-400 hover:text-white">Revenue Suite</a></li>
                                 <li><a href="#how-it-works" class="text-gray-400 hover:text-white">How It Works</a></li>
                             </ul>
                         </div>
@@ -1118,7 +1491,6 @@
                             <h4 class="font-semibold text-gray-200 mb-3">Company</h4>
                             <ul class="space-y-2">
                                 <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                                <!-- REMOVED CAREERS LINK -->
                                 <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
                             </ul>
                         </div>
@@ -1135,22 +1507,17 @@
                     <div class="text-gray-500 text-sm">
                         &copy; 2025 Talaura Technologies Private Limited. All rights reserved.
                     </div>
-                    <!-- REMOVED SOCIAL MEDIA ICONS DIV -->
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- 
-      This script contains all the page animations and interactions.
-      It is a "module" to allow for 'import' statements (though none are used here).
-      It waits for the DOM to be fully loaded before running.
-    -->
+    <!-- JavaScript -->
     <script type="module">
         // FIX: Enhanced Initialization Logic
         document.addEventListener('DOMContentLoaded', () => {
             // Use a slightly longer timeout to increase chances of deferred scripts loading
-            setTimeout(init, 50); 
+            setTimeout(init, 50);
         });
 
         let gsapPluginsRegistered = false; // Flag to ensure registration happens only once
@@ -1160,10 +1527,10 @@
             if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || typeof ScrollToPlugin === 'undefined' || typeof TextPlugin === 'undefined') {
                 console.error("GSAP or required plugins are not available yet. Retrying in 100ms...");
                 // Retry after a short delay if GSAP isn't ready
-                setTimeout(init, 100); 
+                setTimeout(init, 100);
                 return; // Stop execution for now
             }
-            
+
             // Register GSAP plugins only once
             if (!gsapPluginsRegistered) {
                 try {
@@ -1173,10 +1540,10 @@
                 } catch (e) {
                     console.error("Error registering GSAP plugins:", e);
                     // Critical error, animations likely won't work
-                    return; 
+                    return;
                 }
             } else {
-                 console.log("GSAP plugins already registered.");
+                console.log("GSAP plugins already registered.");
             }
 
             // --- Globals to manage animations for cleanup ---
@@ -1225,12 +1592,19 @@
                         const targetEl = document.querySelector(targetId);
 
                         if (targetEl) {
-                            gsap.to(window, {duration: 1.2, scrollTo: { y: targetId, offsetY: 80 }, ease: "power3.inOut"});
+                            gsap.to(window, {
+                                duration: 1.2,
+                                scrollTo: {
+                                    y: targetId,
+                                    offsetY: 80
+                                },
+                                ease: "power3.inOut"
+                            });
                         }
 
                         // Close mobile menu on navigation
                         const mobileMenu = document.getElementById('mobile-menu');
-                        if(mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                             mobileMenu.classList.add('hidden');
                             document.getElementById('menu-closed-icon').classList.remove('hidden');
                             document.getElementById('menu-open-icon').classList.add('hidden');
@@ -1289,7 +1663,12 @@
                     track.innerHTML = content.split('').map(c => `<span>${c}</span>`).join('');
                     charSpan.appendChild(track);
                     container.appendChild(charSpan);
-                    charElements.push({ span: charSpan, track: track, finalIndex: finalIndex, content: content });
+                    charElements.push({
+                        span: charSpan,
+                        track: track,
+                        finalIndex: finalIndex,
+                        content: content
+                    });
                 });
 
                 requestAnimationFrame(() => {
@@ -1298,20 +1677,32 @@
                         const fontSize = parseFloat(window.getComputedStyle(element).fontSize);
                         if (fontSize) {
                             charElements.forEach(item => {
-                                gsap.set(item.span, { height: fontSize });
-                                gsap.set(item.track.querySelectorAll('span'), { height: fontSize, lineHeight: `${fontSize}px` });
+                                gsap.set(item.span, {
+                                    height: fontSize
+                                });
+                                gsap.set(item.track.querySelectorAll('span'), {
+                                    height: fontSize,
+                                    lineHeight: `${fontSize}px`
+                                });
                             });
                         } else return;
                     } else {
                         charElements.forEach(item => {
-                            gsap.set(item.span, { height: containerHeight });
-                            gsap.set(item.track.querySelectorAll('span'), { height: containerHeight, lineHeight: `${containerHeight}px` });
+                            gsap.set(item.span, {
+                                height: containerHeight
+                            });
+                            gsap.set(item.track.querySelectorAll('span'), {
+                                height: containerHeight,
+                                lineHeight: `${containerHeight}px`
+                            });
                         });
                     }
 
                     const tl = gsap.timeline({
                         scrollTrigger: {
-                            trigger: element, start: "top 90%", toggleActions: "play none none reset"
+                            trigger: element,
+                            start: "top 90%",
+                            toggleActions: "play none none reset"
                         }
                     });
 
@@ -1320,131 +1711,226 @@
                         if (item.content.length > 1 && currentHeight > 0) {
                             const startOffset = -item.content.length * currentHeight * gsap.utils.random(0.5, 1.5);
                             const finalOffset = -item.finalIndex * currentHeight;
-                            gsap.set(item.track, { y: startOffset });
-                            tl.to(item.track, { y: finalOffset, duration: 1.5 + index * 0.1, ease: "expo.out" }, 0);
+                            gsap.set(item.track, {
+                                y: startOffset
+                            });
+                            tl.to(item.track, {
+                                y: finalOffset,
+                                duration: 1.5 + index * 0.1,
+                                ease: "expo.out"
+                            }, 0);
                         } else if (currentHeight > 0) {
-                            gsap.set(item.track, { y: 0, opacity: 0 });
-                            tl.to(item.track, { opacity: 1, duration: 0.5, delay: 0.5 + index * 0.05 }, 0);
+                            gsap.set(item.track, {
+                                y: 0,
+                                opacity: 0
+                            });
+                            tl.to(item.track, {
+                                opacity: 1,
+                                duration: 0.5,
+                                delay: 0.5 + index * 0.05
+                            }, 0);
                         }
                     });
                     allScrollTriggers.push(tl.scrollTrigger);
                     allTimelines.push(tl);
                 });
             }
-            // PASTE THIS ENTIRE NEW FUNCTION...
-function animateHeroTypewriter() {
-    // Don't animate if the user prefers reduced motion
-    if (prefersReducedMotion) {
-        const el = document.getElementById('hero-typewriter');
-        if (el) el.textContent = "Every Store Conversation";
-        const cursor = document.querySelector('.typewriter-cursor');
-        if(cursor) cursor.style.display = 'none';
-        return;
-    }
 
-    const words = ["Every Store Conversation", "Every Lost Deal", "Every Customer Objection"];
-    const typewriterEl = document.getElementById('hero-typewriter');
-    if (!typewriterEl) return; // Exit if element not found
-    
-    // Create a GSAP timeline
-    const tl = gsap.timeline({ 
-        repeat: -1, // Loop forever
-        delay: 1.5, // Wait 1.5s before starting
-        scrollTrigger: { // Pause animation when not in view
-             trigger: "#hero",
-             start: "top bottom",
-             end: "bottom top",
-             toggleActions: "play pause play pause"
-        }
-    });
+            function animateHeroTypewriter() {
+                // Don't animate if the user prefers reduced motion
+                if (prefersReducedMotion) {
+                    const el = document.getElementById('hero-typewriter');
+                    if (el) el.textContent = "Every Store Conversation";
+                    const cursor = document.querySelector('.typewriter-cursor');
+                    if (cursor) cursor.style.display = 'none';
+                    return;
+                }
 
-    // Loop through each word and create the type/delete animation
-    words.forEach(word => {
-        tl.to(typewriterEl, {
-            text: word,
-            duration: 1.5, // Time to type the word
-            ease: "power1.inOut"
-        })
-        .to(typewriterEl, {
-            text: "",
-            duration: 0.8, // Time to delete the word
-            ease: "power1.inOut",
-            delay: 2.5 // How long to wait before deleting
-        });
-    });
+                const words = ["Every Store Conversation"];
+                const typewriterEl = document.getElementById('hero-typewriter');
+                if (!typewriterEl) return; // Exit if element not found
 
-    // Add to global timelines for cleanup (good practice)
-    allTimelines.push(tl);
-    if(tl.scrollTrigger) allScrollTriggers.push(tl.scrollTrigger);
-}
+                // Create a GSAP timeline
+                const tl = gsap.timeline({
+                    repeat: -1, // Loop forever
+                    delay: 1.5, // Wait 1.5s before starting
+                    scrollTrigger: { // Pause animation when not in view
+                        trigger: "#hero",
+                        start: "top bottom",
+                        end: "bottom top",
+                        toggleActions: "play pause play pause"
+                    }
+                });
+
+                // Loop through each word and create the type/delete animation
+                words.forEach(word => {
+                    tl.to(typewriterEl, {
+                            text: word,
+                            duration: 1.5, // Time to type the word
+                            ease: "power1.inOut"
+                        })
+                        .to(typewriterEl, {
+                            text: "",
+                            duration: 0.8, // Time to delete the word
+                            ease: "power1.inOut",
+                            delay: 2.5 // How long to wait before deleting
+                        });
+                });
+
+                // Add to global timelines for cleanup (good practice)
+                allTimelines.push(tl);
+                if (tl.scrollTrigger) allScrollTriggers.push(tl.scrollTrigger);
+            }
 
             function setupPageLoadAnimations() {
                 const revealElements = gsap.utils.toArray(".gsap-reveal:not(.pillar-card .pillar-icon)");
+
+                // --- START: NEW CORRECT LOGIC ---
                 if (!prefersReducedMotion) {
-                    ScrollTrigger.batch(revealElements, {
-                        start: "top 90%",
-                        onEnter: batch => {
-                            gsap.fromTo(batch, { opacity: 0, y: 50, skewY: 2 }, {
-                                opacity: 1, y: 0, skewY: 0, duration: 1.5, ease: "expo.out",
-                                stagger: { each: 0.1, from: "start" },
-                                delay: (i) => parseFloat(batch[i].dataset.gsapDelay) || 0,
-                                overwrite: "auto"
-                            });
-                        },
-                        once: true
+                    // Create individual animation and trigger per element
+                    revealElements.forEach((element) => {
+                        gsap.fromTo(
+                            element, {
+                                opacity: 0,
+                                y: 50,
+                                skewY: 2
+                            }, {
+                                opacity: 1,
+                                y: 0,
+                                skewY: 0,
+                                duration: 1.5,
+                                ease: "expo.out",
+                                delay: parseFloat(element.dataset.gsapDelay) || 0,
+                                scrollTrigger: {
+                                    trigger: element,
+                                    start: "top 90%",
+                                    toggleActions: "play none none none",
+                                    once: true // Works correctly per element
+                                }
+                            }
+                        );
                     });
                 } else {
-                    gsap.set(revealElements, { opacity: 1, y: 0, skewY: 0 });
+                    // Fallback for reduced motion
+                    gsap.set(revealElements, {
+                        opacity: 1,
+                        y: 0,
+                        skewY: 0
+                    });
                 }
+                // --- END: NEW CORRECT LOGIC ---
 
+                // Pillar icons
                 const pillarIcons = gsap.utils.toArray(".pillar-card .pillar-icon");
                 pillarIcons.forEach((icon) => {
-                    const parentCard = icon.closest('.pillar-card');
+                    const parentCard = icon.closest(".pillar-card");
                     if (!parentCard) return;
+
                     const tl = gsap.timeline({
-                        scrollTrigger: { trigger: parentCard, start: "top 85%", toggleActions: "play none none none", once: true },
+                        scrollTrigger: {
+                            trigger: parentCard,
+                            start: "top 85%",
+                            toggleActions: "play none none none",
+                            once: true
+                        },
                         delay: parseFloat(parentCard.dataset.gsapDelay) || 0,
                         paused: prefersReducedMotion
                     });
-                    tl.to(icon, { opacity: 1, scale: 1, rotate: 0, duration: 0.8, ease: "elastic.out(1, 0.75)" });
+
+                    tl.to(icon, {
+                        opacity: 1,
+                        scale: 1,
+                        rotate: 0,
+                        duration: 0.8,
+                        ease: "elastic.out(1, 0.75)"
+                    });
+
                     allScrollTriggers.push(tl.scrollTrigger);
                     allTimelines.push(tl);
                 });
 
-                gsap.utils.toArray(".stat-highlight").forEach(el => createRolodexAnimation(el));
+                // Stat highlight
+                gsap.utils.toArray(".stat-highlight").forEach((el) => createRolodexAnimation(el));
 
-                const header = document.querySelector('header');
+                // Header scroll behavior
+                const header = document.querySelector("header");
                 if (header) {
                     const stHeader = ScrollTrigger.create({
-                        start: "top -80px", end: 99999,
-                        toggleClass: {className: "scrolled", targets: header}
+                        start: "top -80px",
+                        end: 99999,
+                        toggleClass: {
+                            className: "scrolled",
+                            targets: header
+                        }
                     });
                     allScrollTriggers.push(stHeader);
                 }
 
+                // Pillar card glow pulse
                 const pillarCards = gsap.utils.toArray(".pillar-card");
-                pillarCards.forEach(card => {
-                    const glowColor = card.dataset.glowColor || 'rgba(96, 165, 250, 0.5)';
+                pillarCards.forEach((card) => {
+                    const glowColor = card.dataset.glowColor || "rgba(96, 165, 250, 0.5)";
                     const pulseTl = gsap.timeline({
-                        repeat: -1, yoyo: true, paused: true, paused: prefersReducedMotion
+                        repeat: -1,
+                        yoyo: true,
+                        paused: prefersReducedMotion
                     });
-                    pulseTl.fromTo(card,
-                        { boxShadow: `0 8px 32px rgba(0, 0, 0, 0.37), 0 0 10px ${glowColor.replace('0.5', '0.2')}` },
-                        { boxShadow: `0 8px 32px rgba(0, 0, 0, 0.45), 0 0 25px ${glowColor}`, duration: 1.5, ease: "sine.inOut" }
+
+                    pulseTl.fromTo(
+                        card, {
+                            boxShadow: `0 8px 32px rgba(0, 0, 0, 0.37), 0 0 10px ${glowColor.replace(
+                            "0.5",
+                            "0.2"
+                        )}`
+                        }, {
+                            boxShadow: `0 8px 32px rgba(0, 0, 0, 0.45), 0 0 25px ${glowColor}`,
+                            duration: 1.5,
+                            ease: "sine.inOut"
+                        }
                     );
 
                     if (!prefersReducedMotion) {
                         const stPulse = ScrollTrigger.create({
-                            trigger: card, start: "top 85%", end: "bottom 15%",
-                            onEnter: () => pulseTl.play(), onLeave: () => pulseTl.pause(),
-                            onEnterBack: () => pulseTl.play(), onLeaveBack: () => pulseTl.pause()
+                            trigger: card,
+                            start: "top 85%",
+                            end: "bottom 15%",
+                            onEnter: () => pulseTl.play(),
+                            onLeave: () => pulseTl.pause(),
+                            onEnterBack: () => pulseTl.play(),
+                            onLeaveBack: () => pulseTl.pause()
                         });
                         allScrollTriggers.push(stPulse);
                     }
+
                     allTimelines.push(pulseTl);
                 });
+
+                // Hero background parallax
+                const heroBgText = document.getElementById("hero-bg-text");
+                if (heroBgText && !prefersReducedMotion) {
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: "#hero",
+                            start: "top top",
+                            end: "bottom top",
+                            scrub: 1.5
+                        }
+                    });
+
+                    // Move text up 30% as the user scrolls down
+                    tl.to(heroBgText, {
+                        yPercent: -30,
+                        ease: "none"
+                    });
+
+                    allScrollTriggers.push(tl.scrollTrigger);
+                    allTimelines.push(tl);
+                }
+
+                // Hero typewriter animation
                 animateHeroTypewriter();
             }
+
 
             // --- Section-Specific Animation Logic ---
             function setupProblemAnimation() {
@@ -1452,28 +1938,39 @@ function animateHeroTypewriter() {
                 if (!problemGrid) return;
                 let dynamicInsightLoop;
                 const st = ScrollTrigger.create({
-                    trigger: problemGrid, start: "top 75%",
+                    trigger: problemGrid,
+                    start: "top 75%",
                     onEnter: () => {
                         if (!prefersReducedMotion) {
                             const sopCard = problemGrid.querySelector('#insight-card-1');
-                            if(sopCard) {
+                            if (sopCard) {
                                 const progressBar = sopCard.querySelector('.progress-bar');
                                 const progressLabel = sopCard.querySelector('.progress-label');
-                                const counter = { val: 0 };
-                                gsap.to(progressBar, { width: "68%", duration: 1.2, ease: 'power3.out', delay: 0.5 });
+                                const counter = {
+                                    val: 0
+                                };
+                                gsap.to(progressBar, {
+                                    width: "68%",
+                                    duration: 1.2,
+                                    ease: 'power3.out',
+                                    delay: 0.5
+                                });
                                 gsap.to(counter, {
-                                    val: 68, duration: 1.2, ease: 'power3.out', delay: 0.5,
+                                    val: 68,
+                                    duration: 1.2,
+                                    ease: 'power3.out',
+                                    delay: 0.5,
                                     onUpdate: () => progressLabel.innerText = `${Math.round(counter.val)}%`
                                 });
                             }
                             setTimeout(() => {
-                                if(dynamicInsightLoop) dynamicInsightLoop.kill();
+                                if (dynamicInsightLoop) dynamicInsightLoop.kill();
                                 dynamicInsightLoop = startDynamicInsights();
                                 if (dynamicInsightLoop) allTimelines.push(dynamicInsightLoop);
                             }, 1200);
                         } else {
                             const sopCard = problemGrid.querySelector('#insight-card-1');
-                            if(sopCard) {
+                            if (sopCard) {
                                 sopCard.querySelector('.progress-bar').style.width = '68%';
                                 sopCard.querySelector('.progress-label').innerText = '68%';
                             }
@@ -1482,8 +1979,10 @@ function animateHeroTypewriter() {
                     onLeaveBack: () => {
                         if (dynamicInsightLoop) dynamicInsightLoop.kill();
                         const sopCard = problemGrid.querySelector('#insight-card-1');
-                        if(sopCard) {
-                            gsap.set(sopCard.querySelector('.progress-bar'), {width: '0%'});
+                        if (sopCard) {
+                            gsap.set(sopCard.querySelector('.progress-bar'), {
+                                width: '0%'
+                            });
                             sopCard.querySelector('.progress-label').innerText = '0%';
                         }
                     }
@@ -1492,29 +1991,65 @@ function animateHeroTypewriter() {
             }
 
             function startDynamicInsights() {
-                const insightData = [
-                    { text: [ 'Pricing Mismatch', 'Product Not Available', 'Different Decision Maker' ], value: [ '38% Non Buy', '21% Non Buy', '15% Non Buy' ] }, null,
-                    { text: [ '"Investment Scheme"', '"Cufflinks"', '"Mattress Protectors"' ], value: [ 'In 18% Conversations', 'In 40% Conversations', 'In 22% Conversations' ] },
-                    { text: [ 'Recliners', 'Platinum Bracelets', 'Silk Ties' ], value: [ 'Bad Quality Motors', 'Old Designs', 'Lack Of Colour Options' ] }
-                ];
-                const dynamicCards = gsap.utils.toArray('.insight-card').map((card, i) => ({ card, data: insightData[i], dataIndex: 0 })).filter(c => c.data);
+                const insightData = [{
+                    text: ['Pricing Mismatch', 'Product Not Available', 'Different Decision Maker'],
+                    value: ['38% Non Buy', '21% Non Buy', '15% Non Buy']
+                }, null, {
+                    text: ['"Investment Scheme"', '"Cufflinks"', '"Mattress Protectors"'],
+                    value: ['In 18% Conversations', 'In 40% Conversations', 'In 22% Conversations']
+                }, {
+                    text: ['Recliners', 'Platinum Bracelets', 'Silk Ties'],
+                    value: ['Bad Quality Motors', 'Old Designs', 'Lack Of Colour Options']
+                }];
+                const dynamicCards = gsap.utils.toArray('.insight-card').map((card, i) => ({
+                    card,
+                    data: insightData[i],
+                    dataIndex: 0
+                })).filter(c => c.data);
                 if (dynamicCards.length === 0) return null;
-                const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+                const tl = gsap.timeline({
+                    repeat: -1,
+                    repeatDelay: 1
+                });
                 dynamicCards.forEach((item, index) => {
-                    const { card, data } = item;
+                    const {
+                        card,
+                        data
+                    } = item;
                     const textEl = card.querySelector('.insight-text');
                     const valueEl = card.querySelector('.insight-value');
-                    if(textEl && valueEl) {
+                    if (textEl && valueEl) {
                         tl.add(() => {
                             item.dataIndex = (item.dataIndex + 1) % data.text.length;
                             const newText = data.text[item.dataIndex];
                             const newValue = data.value[item.dataIndex];
                             gsap.timeline()
-                                .to(card, { scale: 1.03, duration: 0.15, ease: 'power2.out' })
-                                .to([textEl, valueEl], { y: 5, opacity: 0, duration: 0.15, ease: 'power1.in' }, "<")
-                                .set([textEl, valueEl], { textContent: (i) => i === 0 ? newText : newValue, y: -5 })
-                                .to(card, { scale: 1, duration: 0.25, ease: 'back.out(1.7)'})
-                                .to([textEl, valueEl], { y: 0, opacity: 1, duration: 0.2, ease: 'power1.out' }, "<0.1");
+                                .to(card, {
+                                    scale: 1.03,
+                                    duration: 0.15,
+                                    ease: 'power2.out'
+                                })
+                                .to([textEl, valueEl], {
+                                    y: 5,
+                                    opacity: 0,
+                                    duration: 0.15,
+                                    ease: 'power1.in'
+                                }, "<")
+                                .set([textEl, valueEl], {
+                                    textContent: (i) => i === 0 ? newText : newValue,
+                                    y: -5
+                                })
+                                .to(card, {
+                                    scale: 1,
+                                    duration: 0.25,
+                                    ease: 'back.out(1.7)'
+                                })
+                                .to([textEl, valueEl], {
+                                    y: 0,
+                                    opacity: 1,
+                                    duration: 0.2,
+                                    ease: 'power1.out'
+                                }, "<0.1");
                         }, `+=${index === 0 ? 0 : 2}`);
                     }
                 });
@@ -1522,8 +2057,8 @@ function animateHeroTypewriter() {
             }
 
             function setupFeatureAnimations() {
-                 // Check if feather is defined *before* calling replace
-                 if (typeof feather !== 'undefined') {
+                // Check if feather is defined *before* calling replace
+                if (typeof feather !== 'undefined') {
                     feather.replace();
                 } else {
                     console.warn("Feather icons not ready for feature animations yet.");
@@ -1534,14 +2069,35 @@ function animateHeroTypewriter() {
                     const dash1 = document.getElementById('feature-dashboard-1');
                     if (dash1) {
                         const sparkContainer = dash1.querySelector('#fd1-spark-2');
-                        if (sparkContainer) sparkContainer.innerHTML = Array.from({length: 28}, (_, i) => `<div class="w-full rounded-t-sm" data-index="${i}" style="height: ${gsap.utils.random(15, 90)}%; background-color: ${(i > 18 && i < 24) ? '#f87171' : '#3b82f6'};"></div>`).join('');
+                        if (sparkContainer) sparkContainer.innerHTML = Array.from({
+                            length: 28
+                        }, (_, i) => `<div class="w-full rounded-t-sm" data-index="${i}" style="height: ${gsap.utils.random(15, 90)}%; background-color: ${(i > 18 && i < 24) ? '#f87171' : '#3b82f6'};"></div>`).join('');
                         const floatingCards = dash1.querySelectorAll('.floating-card');
-                        gsap.set(floatingCards, { y: 0, scale: 0.8 });
+                        gsap.set(floatingCards, {
+                            y: 0,
+                            scale: 0.8
+                        });
                         if (floatingCards.length >= 4) {
-                            gsap.set(floatingCards[0], { top: '100%', left: 0, transform: 'translate(-25%, -75%) scale(0.8)' });
-                            gsap.set(floatingCards[1], { top: 0, left: 0, transform: 'translate(-25%, -25%) scale(0.8)' });
-                            gsap.set(floatingCards[2], { top: 0, left: '100%', transform: 'translate(-75%, -25%) scale(0.8)' });
-                            gsap.set(floatingCards[3], { top: '100%', left: '100%', transform: 'translate(-75%, -75%) scale(0.8)' });
+                            gsap.set(floatingCards[0], {
+                                top: '100%',
+                                left: 0,
+                                transform: 'translate(-25%, -75%) scale(0.8)'
+                            });
+                            gsap.set(floatingCards[1], {
+                                top: 0,
+                                left: 0,
+                                transform: 'translate(-25%, -25%) scale(0.8)'
+                            });
+                            gsap.set(floatingCards[2], {
+                                top: 0,
+                                left: '100%',
+                                transform: 'translate(-75%, -25%) scale(0.8)'
+                            });
+                            gsap.set(floatingCards[3], {
+                                top: '100%',
+                                left: '100%',
+                                transform: 'translate(-75%, -75%) scale(0.8)'
+                            });
                         }
                     }
                     setupCoverflowAnimation(document.getElementById('feature-dashboard-2'));
@@ -1554,42 +2110,112 @@ function animateHeroTypewriter() {
                 if (dash1) {
                     const sparkContainer = dash1.querySelector('#fd1-spark-2');
                     if (sparkContainer) {
-                        sparkContainer.innerHTML = Array.from({length: 28}, (_, i) => `<div class="w-full bg-blue-800 rounded-t-sm" data-index="${i}" style="height: 10%;"></div>`).join('');
-                        const sparkTl = gsap.timeline({ scrollTrigger: { trigger: dash1, start: "top 85%", toggleActions: "play pause resume pause" }, repeat: -1, repeatDelay: 1.5 });
+                        sparkContainer.innerHTML = Array.from({
+                            length: 28
+                        }, (_, i) => `<div class="w-full bg-blue-800 rounded-t-sm" data-index="${i}" style="height: 10%;"></div>`).join('');
+                        const sparkTl = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: dash1,
+                                start: "top 85%",
+                                toggleActions: "play pause resume pause"
+                            },
+                            repeat: -1,
+                            repeatDelay: 1.5
+                        });
                         const sparkBars = dash1.querySelectorAll('#fd1-spark-2 > div');
                         const redBars = Array.from(sparkBars).filter((_, i) => i > 18 && i < 24);
-                        sparkTl.to(sparkBars, { height: () => `${gsap.utils.random(15, 90)}%`, backgroundColor: (i) => (i > 18 && i < 24) ? '#f87171' : '#3b82f6', stagger: { each: 0.03 }, duration: 0.8, ease: 'power2.inOut' })
-                               .to(redBars, { scaleY: 1.2, yoyo: true, repeat: 1, duration: 0.3, ease: 'power2.inOut', stagger: 0.05 }, "-=0.4")
-                               .to(sparkBars, { height: '10%', backgroundColor: '#1e3a8a', scaleY: 1, duration: 0.6, ease: 'power2.in' }, '+=0.5');
+                        sparkTl.to(sparkBars, {
+                                height: () => `${gsap.utils.random(15, 90)}%`,
+                                backgroundColor: (i) => (i > 18 && i < 24) ? '#f87171' : '#3b82f6',
+                                stagger: {
+                                    each: 0.03
+                                },
+                                duration: 0.8,
+                                ease: 'power2.inOut'
+                            })
+                            .to(redBars, {
+                                scaleY: 1.2,
+                                yoyo: true,
+                                repeat: 1,
+                                duration: 0.3,
+                                ease: 'power2.inOut',
+                                stagger: 0.05
+                            }, "-=0.4")
+                            .to(sparkBars, {
+                                height: '10%',
+                                backgroundColor: '#1e3a8a',
+                                scaleY: 1,
+                                duration: 0.6,
+                                ease: 'power2.in'
+                            }, '+=0.5');
                         allScrollTriggers.push(sparkTl.scrollTrigger);
                         allTimelines.push(sparkTl);
                     }
                     const floatingCards = dash1.querySelectorAll('.floating-card');
                     floatingCards.forEach((card) => {
-                        const tl = gsap.timeline({ scrollTrigger: { trigger: dash1, start: "top bottom", end: "bottom top", toggleActions: "resume pause resume pause" }, repeat: -1, yoyo: true, delay: gsap.utils.random(0, 2) });
-                        tl.to(card, { y: "-=10", duration: gsap.utils.random(2.5, 4), ease: 'sine.inOut' });
-                        allTimelines.push(tl); allScrollTriggers.push(tl.scrollTrigger);
+                        const tl = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: dash1,
+                                start: "top bottom",
+                                end: "bottom top",
+                                toggleActions: "resume pause resume pause"
+                            },
+                            repeat: -1,
+                            yoyo: true,
+                            delay: gsap.utils.random(0, 2)
+                        });
+                        tl.to(card, {
+                            y: "-=10",
+                            duration: gsap.utils.random(2.5, 4),
+                            ease: 'sine.inOut'
+                        });
+                        allTimelines.push(tl);
+                        allScrollTriggers.push(tl.scrollTrigger);
                     });
                     const conversionTag = dash1.querySelector('#conversion-lost-tag');
                     if (conversionTag) {
-                        const tagTl = gsap.timeline({ scrollTrigger: { trigger: dash1, start: "top 75%", toggleActions: "play pause resume pause" }, repeat: -1, repeatDelay: 2 });
-                        tagTl.to(conversionTag, { scale: 1.1, boxShadow: "0 0 15px rgba(248, 113, 113, 0.5)", duration: 0.5, ease: 'power2.inOut', yoyo: true, repeat: 1 });
-                        allScrollTriggers.push(tagTl.scrollTrigger); allTimelines.push(tagTl);
+                        const tagTl = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: dash1,
+                                start: "top 75%",
+                                toggleActions: "play pause resume pause"
+                            },
+                            repeat: -1,
+                            repeatDelay: 2
+                        });
+                        tagTl.to(conversionTag, {
+                            scale: 1.1,
+                            boxShadow: "0 0 15px rgba(248, 113, 113, 0.5)",
+                            duration: 0.5,
+                            ease: 'power2.inOut',
+                            yoyo: true,
+                            repeat: 1
+                        });
+                        allScrollTriggers.push(tagTl.scrollTrigger);
+                        allTimelines.push(tagTl);
                     }
                 }
 
                 const dash2 = document.getElementById('feature-dashboard-2');
                 if (dash2) setupCoverflowAnimation(dash2);
                 const dash3 = document.getElementById('feature-dashboard-3');
-                if(dash3) setupTicketAnimation(dash3);
+                if (dash3) setupTicketAnimation(dash3);
                 setupRevolvingRing();
 
                 ScrollTrigger.matchMedia({
                     "(min-width: 1024px)": function() {
                         gsap.utils.toArray('.parallax-visual').forEach(visual => {
                             const parentFeature = visual.closest('.feature-card-wrapper');
-                            if(parentFeature){
-                                const st = ScrollTrigger.create({ trigger: parentFeature, start: "top bottom", end: "bottom top", scrub: true, onUpdate: self => gsap.set(visual, { yPercent: -15 * self.progress }) });
+                            if (parentFeature) {
+                                const st = ScrollTrigger.create({
+                                    trigger: parentFeature,
+                                    start: "top bottom",
+                                    end: "bottom top",
+                                    scrub: true,
+                                    onUpdate: self => gsap.set(visual, {
+                                        yPercent: -15 * self.progress
+                                    })
+                                });
                                 allScrollTriggers.push(st);
                             }
                         });
@@ -1599,65 +2225,258 @@ function animateHeroTypewriter() {
 
             function setupCoverflowAnimation(container) {
                 if (!container) return;
-                let proxy; let autoPlayTween;
-                const insightData = [
-                    { category: "Top Objection", name: 'Price is too high', value: 37, color: '#F87171' }, { category: "Competitor Mention", name: 'Sleepgood', value: 56, color: '#FB923C' },
-                    { category: "High Intent Signal", name: 'Returning Customer', value: 53, color: '#4ADE80' }, { category: "Cross-Sell", name: 'Supreme Mattress', value: 47, color: '#60A5FA' },
-                    { category: "Top Objection", name: 'Quality not good', value: 21, color: '#F87171' }, { category: "Competitor Mention", name: 'Timeless Diamonds', value: 24, color: '#FB923C' },
-                    { category: "High Intent Signal", name: 'Gift Purchase', value: 68, color: '#4ADE80' }, { category: "Cross-Sell", name: 'Diamond Ring', value: 43, color: '#60A5FA' }
-                ];
-                const track = container.querySelector('.coverflow-track'); if (!track) return;
+                let proxy;
+                let autoPlayTween;
+                const insightData = [{
+                    category: "Top Objection",
+                    name: 'Price is too high',
+                    value: 37,
+                    color: '#F87171'
+                }, {
+                    category: "Competitor Mention",
+                    name: 'Sleepgood',
+                    value: 56,
+                    color: '#FB923C'
+                }, {
+                    category: "High Intent Signal",
+                    name: 'Returning Customer',
+                    value: 53,
+                    color: '#4ADE80'
+                }, {
+                    category: "Cross-Sell",
+                    name: 'Supreme Mattress',
+                    value: 47,
+                    color: '#60A5FA'
+                }, {
+                    category: "Top Objection",
+                    name: 'Quality not good',
+                    value: 21,
+                    color: '#F87171'
+                }, {
+                    category: "Competitor Mention",
+                    name: 'Timeless Diamonds',
+                    value: 24,
+                    color: '#FB923C'
+                }, {
+                    category: "High Intent Signal",
+                    name: 'Gift Purchase',
+                    value: 68,
+                    color: '#4ADE80'
+                }, {
+                    category: "Cross-Sell",
+                    name: 'Diamond Ring',
+                    value: 43,
+                    color: '#60A5FA'
+                }];
+                const track = container.querySelector('.coverflow-track');
+                if (!track) return;
                 track.innerHTML = insightData.map((item, index) => `<div class="insight-tile-coverflow flex flex-col justify-center" data-index="${index}"><div class="flex items-center justify-between mb-1 sm:mb-2"><p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">${item.category}</p><span class="w-2 h-2 rounded-full" style="background-color: ${item.color};"></span></div><p class="text-2xl font-bold text-gray-100 mt-1 sm:mt-2">${item.name}</p><p class="text-5xl font-bold mt-1 insight-value-animated" style="color: ${item.color};">0%</p></div>`).join('');
-                const tiles = gsap.utils.toArray(container.querySelectorAll(".insight-tile-coverflow")); if (tiles.length === 0) return;
-                const counters = tiles.map(tile => ({ val: 0, el: tile.querySelector('.insight-value-animated') }));
-                const counterTweens = counters.map((counter, i) => gsap.to(counter, { val: insightData[i].value, duration: 0.8, ease: 'power2.out', paused: true, onUpdate: () => { if (counter.el) counter.el.textContent = `${Math.round(counter.val)}%`; } }));
+                const tiles = gsap.utils.toArray(container.querySelectorAll(".insight-tile-coverflow"));
+                if (tiles.length === 0) return;
+                const counters = tiles.map(tile => ({
+                    val: 0,
+                    el: tile.querySelector('.insight-value-animated')
+                }));
+                const counterTweens = counters.map((counter, i) => gsap.to(counter, {
+                    val: insightData[i].value,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    paused: true,
+                    onUpdate: () => {
+                        if (counter.el) counter.el.textContent = `${Math.round(counter.val)}%`;
+                    }
+                }));
                 let lastActiveIndex = -1;
 
                 function updateCarousel(progress) {
-                    const count = tiles.length; if (count === 0) return;
-                    const wrappedProgress = ((progress % count) + count) % count; const currentActiveIndex = Math.round(wrappedProgress);
+                    const count = tiles.length;
+                    if (count === 0) return;
+                    const wrappedProgress = ((progress % count) + count) % count;
+                    const currentActiveIndex = Math.round(wrappedProgress);
                     if (currentActiveIndex !== lastActiveIndex) {
-                        if (lastActiveIndex !== -1 && lastActiveIndex < counterTweens.length) { const prevTween = counterTweens[lastActiveIndex]; const prevCounter = counters[lastActiveIndex]; if (prevTween && prevCounter?.el) { prevTween.pause(0); prevCounter.val = 0; prevCounter.el.textContent = '0%'; } }
-                        if (currentActiveIndex < counterTweens.length) { const currentTween = counterTweens[currentActiveIndex]; if (currentTween) { counters[currentActiveIndex].val = 0; if (counters[currentActiveIndex].el) counters[currentActiveIndex].el.textContent = '0%'; currentTween.restart(); } }
+                        if (lastActiveIndex !== -1 && lastActiveIndex < counterTweens.length) {
+                            const prevTween = counterTweens[lastActiveIndex];
+                            const prevCounter = counters[lastActiveIndex];
+                            // FIX: Replace optional chaining
+                            if (prevTween && (prevCounter && prevCounter.el)) {
+                                prevTween.pause(0);
+                                prevCounter.val = 0;
+                                prevCounter.el.textContent = '0%';
+                            }
+                        }
+                        if (currentActiveIndex < counterTweens.length) {
+                            const currentTween = counterTweens[currentActiveIndex];
+                            if (currentTween) {
+                                counters[currentActiveIndex].val = 0;
+                                if (counters[currentActiveIndex].el) counters[currentActiveIndex].el.textContent = '0%';
+                                currentTween.restart();
+                            }
+                        }
                         lastActiveIndex = currentActiveIndex;
                     }
-                    const isMobile = window.innerWidth < 768; const xMultiplier = isMobile ? 130 : 200; const zMultiplier = isMobile ? 80 : 120; const scaleMultiplier = isMobile ? 0.35 : 0.15; const rotMultiplier = isMobile ? 50 : 30; const opacityMultiplier = isMobile ? 0.65 : 0.4;
-                    tiles.forEach((tile, i) => { let offset = gsap.utils.wrap(count / -2, count / 2, i - wrappedProgress); const z = -Math.abs(offset) * zMultiplier; const yRot = -offset * rotMultiplier; const x = offset * xMultiplier; const scale = 1 - Math.abs(offset) * scaleMultiplier; const opacity = 1 - Math.abs(offset) * opacityMultiplier; gsap.set(tile, { x, z, scale, rotationY: yRot, opacity: Math.max(0, opacity), zIndex: count - Math.abs(Math.round(offset)) }); });
+                    const isMobile = window.innerWidth < 768;
+                    const xMultiplier = isMobile ? 130 : 200;
+                    const zMultiplier = isMobile ? 80 : 120;
+                    const scaleMultiplier = isMobile ? 0.35 : 0.15;
+                    const rotMultiplier = isMobile ? 50 : 30;
+                    const opacityMultiplier = isMobile ? 0.65 : 0.4;
+                    tiles.forEach((tile, i) => {
+                        let offset = gsap.utils.wrap(count / -2, count / 2, i - wrappedProgress);
+                        const z = -Math.abs(offset) * zMultiplier;
+                        const yRot = -offset * rotMultiplier;
+                        const x = offset * xMultiplier;
+                        const scale = 1 - Math.abs(offset) * scaleMultiplier;
+                        const opacity = 1 - Math.abs(offset) * opacityMultiplier;
+                        gsap.set(tile, {
+                            x,
+                            z,
+                            scale,
+                            rotationY: yRot,
+                            opacity: Math.max(0, opacity),
+                            zIndex: count - Math.abs(Math.round(offset))
+                        });
+                    });
                 }
-                proxy = { progress: 0 };
+                proxy = {
+                    progress: 0
+                };
                 if (!prefersReducedMotion) {
-                    autoPlayTween = gsap.to(proxy, { progress: `+=${tiles.length}`, duration: tiles.length * 3, ease: 'none', repeat: -1, onUpdate: () => updateCarousel(proxy.progress), scrollTrigger: { trigger: container, start: "top bottom", end: "bottom top", toggleActions: "play pause play pause" } });
-                    allTimelines.push(autoPlayTween); allScrollTriggers.push(autoPlayTween.scrollTrigger);
+                    autoPlayTween = gsap.to(proxy, {
+                        progress: `+=${tiles.length}`,
+                        duration: tiles.length * 3,
+                        ease: 'none',
+                        repeat: -1,
+                        onUpdate: () => updateCarousel(proxy.progress),
+                        scrollTrigger: {
+                            trigger: container,
+                            start: "top bottom",
+                            end: "bottom top",
+                            toggleActions: "play pause play pause"
+                        }
+                    });
+                    allTimelines.push(autoPlayTween);
+                    allScrollTriggers.push(autoPlayTween.scrollTrigger);
                     container.addEventListener('mouseenter', () => autoPlayTween && autoPlayTween.pause());
-                    container.addEventListener('mouseleave', () => { if (autoPlayTween && autoPlayTween.scrollTrigger && autoPlayTween.scrollTrigger.isActive) { autoPlayTween.play(); } });
+                    container.addEventListener('mouseleave', () => {
+                        if (autoPlayTween && autoPlayTween.scrollTrigger && autoPlayTween.scrollTrigger.isActive) {
+                            autoPlayTween.play();
+                        }
+                    });
                 }
                 updateCarousel(0);
-                const debouncedUpdate = debounce(() => { lastActiveIndex = -1; updateCarousel(proxy?.progress || 0); }, 150);
+                // FIX: Replace optional chaining
+                const debouncedUpdate = debounce(() => {
+                    lastActiveIndex = -1;
+                    updateCarousel((proxy && proxy.progress) || 0);
+                }, 150);
                 window.addEventListener('resize', debouncedUpdate);
             }
 
+
             function setupTicketAnimation(dashboard3) {
-                if (!dashboard3) return; const container = dashboard3.querySelector('#ticket-animation-container'); if (!container) return;
-                const productData = [
-                    { name: "Superior Mattress", price: 1200, icon: `<i data-feather="layers" class="w-12 h-12 text-gray-400"></i>`, opportunities: [ { name: "Premium Pillows", price: 90, color: "green" }, { name: "Mattress Protector", price: 60, color: "blue" }, { name: "Bed Sheet Set", price: 45, color: "purple" } ] },
-                    { name: "Diamond Necklace", price: 2800, icon: `<i data-feather="gift" class="w-12 h-12 text-gray-400"></i>`, opportunities: [ { name: "Ext. Warranty", price: 250, color: "green" }, { name: "Polishing Service", price: 60, color: "blue" }, { name: "Engraving", price: 80, color: "purple" } ] },
-                    { name: "Silk Suit", price: 750, icon: `<i data-feather="briefcase" class="w-12 h-12 text-gray-400"></i>`, opportunities: [ { name: "Tailored Shirt", price: 95, color: "pink" }, { name: "Silk Tie", price: 60, color: "purple" }, { name: "Cuff-Links", price: 40, color: "blue" } ] }
-                ];
-                const colorClasses = { green: 'bg-green-900 text-green-300', blue: 'bg-blue-900 text-blue-300', purple: 'bg-purple-900 text-purple-300', pink: 'bg-pink-900 text-pink-300' };
+                if (!dashboard3) return;
+                const container = dashboard3.querySelector('#ticket-animation-container');
+                if (!container) return;
+                const productData = [{
+                    name: "Superior Mattress",
+                    price: 1200,
+                    icon: `<i data-feather="layers" class="w-12 h-12 text-gray-400"></i>`,
+                    opportunities: [{
+                        name: "Premium Pillows",
+                        price: 90,
+                        color: "green"
+                    }, {
+                        name: "Mattress Protector",
+                        price: 60,
+                        color: "blue"
+                    }, {
+                        name: "Bed Sheet Set",
+                        price: 45,
+                        color: "purple"
+                    }]
+                }, {
+                    name: "Diamond Necklace",
+                    price: 2800,
+                    icon: `<i data-feather="gift" class="w-12 h-12 text-gray-400"></i>`,
+                    opportunities: [{
+                        name: "Ext. Warranty",
+                        price: 250,
+                        color: "green"
+                    }, {
+                        name: "Polishing Service",
+                        price: 60,
+                        color: "blue"
+                    }, {
+                        name: "Engraving",
+                        price: 80,
+                        color: "purple"
+                    }]
+                }, {
+                    name: "Silk Suit",
+                    price: 750,
+                    icon: `<i data-feather="briefcase" class="w-12 h-12 text-gray-400"></i>`,
+                    opportunities: [{
+                        name: "Tailored Shirt",
+                        price: 95,
+                        color: "pink"
+                    }, {
+                        name: "Silk Tie",
+                        price: 60,
+                        color: "purple"
+                    }, {
+                        name: "Cuff-Links",
+                        price: 40,
+                        color: "blue"
+                    }]
+                }];
+                const colorClasses = {
+                    green: 'bg-green-900 text-green-300',
+                    blue: 'bg-blue-900 text-blue-300',
+                    purple: 'bg-purple-900 text-purple-300',
+                    pink: 'bg-pink-900 text-pink-300'
+                };
                 container.innerHTML = productData.map((product, index) => `<div class="product-container absolute inset-0 flex flex-col items-center justify-center" data-index="${index}" style="opacity: ${index === 0 && prefersReducedMotion ? '1' : '0'}; visibility: ${index === 0 && prefersReducedMotion ? 'visible' : 'hidden'};"><div class="ticket-main-card w-64 sm:w-72 glass-card p-4 sm:p-6 rounded-2xl z-10"><div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-gray-800 rounded-lg flex items-center justify-center relative overflow-hidden"><div class="ai-scan-effect absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-transparent -translate-y-full"></div>${product.icon}</div><p class="font-bold text-base sm:text-lg text-gray-100 text-center mt-2 sm:mt-3">${product.name}</p><div class="mt-2 sm:mt-4 text-center"><p class="ticket-price text-3xl sm:text-4xl font-bold text-gray-100">$${product.price.toLocaleString()}</p><p class="ticket-increase-label text-xs sm:text-sm font-semibold text-green-400 opacity-0 h-4 sm:h-5">+0%</p></div></div>${product.opportunities.map(op => `<div class="opportunity-card absolute z-20 w-auto p-2 sm:p-3 rounded-xl sm:rounded-2xl flex items-center gap-1.5 sm:gap-2 ${prefersReducedMotion ? 'opacity-100' : 'opacity-0'}" style="min-width: 130px; sm:min-width: 160px;"><div class="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 ${colorClasses[op.color]} rounded-md sm:rounded-lg flex items-center justify-center font-bold text-sm sm:text-lg">+</div><div><p class="text-[10px] sm:text-xs font-bold text-gray-200">${op.name}</p><p class="text-xs sm:text-sm font-semibold text-gray-100">$${op.price}</p></div></div>`).join('')}</div>`).join('');
                 if (typeof feather !== 'undefined') feather.replace();
 
                 function positionOpportunityCards(index) {
-                    const isMobile = window.innerWidth < 640; const productContainer = container.querySelector(`.product-container[data-index="${index}"]`); if (!productContainer) return;
-                    const allCards = gsap.utils.toArray(productContainer.querySelectorAll('.opportunity-card')); if (allCards.length === 0) return;
-                    gsap.set(allCards[0], { top: '20%', left: '50%', x: isMobile ? '-140%' : '-150%', y: '-50%' });
-                    if(allCards[1]) gsap.set(allCards[1], { top: '35%', left: '50%', x: isMobile ? '40%' : '50%', y: '-50%' });
-                    if(allCards[2]) gsap.set(allCards[2], { top: '70%', left: '50%', x: isMobile ? '-140%' : '-150%', y: '-50%' });
+                    const isMobile = window.innerWidth < 640;
+                    const productContainer = container.querySelector(`.product-container[data-index="${index}"]`);
+                    if (!productContainer) return;
+                    const allCards = gsap.utils.toArray(productContainer.querySelectorAll('.opportunity-card'));
+                    if (allCards.length === 0) return;
+                    gsap.set(allCards[0], {
+                        top: '20%',
+                        left: '50%',
+                        x: isMobile ? '-140%' : '-150%',
+                        y: '-50%'
+                    });
+                    if (allCards[1]) gsap.set(allCards[1], {
+                        top: '35%',
+                        left: '50%',
+                        x: isMobile ? '40%' : '50%',
+                        y: '-50%'
+                    });
+                    if (allCards[2]) gsap.set(allCards[2], {
+                        top: '70%',
+                        left: '50%',
+                        x: isMobile ? '-140%' : '-150%',
+                        y: '-50%'
+                    });
                     if (prefersReducedMotion) {
-                        gsap.set(allCards, { opacity: 1 });
-                        const mainCard = productContainer.querySelector('.ticket-main-card'); const priceEl = productContainer.querySelector('.ticket-price'); const increaseLabel = productContainer.querySelector('.ticket-increase-label'); if (!mainCard || !priceEl || !increaseLabel) return;
-                        const newTotal = productData[index].opportunities.reduce((sum, op) => sum + op.price, productData[index].price); const increase = ((newTotal - productData[index].price) / productData[index].price) * 100;
-                        priceEl.textContent = `$${newTotal.toLocaleString()}`; increaseLabel.textContent = `+${increase.toFixed(1)}% Ticket Increase`; gsap.set(increaseLabel, { opacity: 1 });
+                        gsap.set(allCards, {
+                            opacity: 1
+                        });
+                        const mainCard = productContainer.querySelector('.ticket-main-card');
+                        const priceEl = productContainer.querySelector('.ticket-price');
+                        const increaseLabel = productContainer.querySelector('.ticket-increase-label');
+                        if (!mainCard || !priceEl || !increaseLabel) return;
+                        const newTotal = productData[index].opportunities.reduce((sum, op) => sum + op.price, productData[index].price);
+                        const increase = ((newTotal - productData[index].price) / productData[index].price) * 100;
+                        priceEl.textContent = `$${newTotal.toLocaleString()}`;
+                        increaseLabel.textContent = `+${increase.toFixed(1)}% Ticket Increase`;
+                        gsap.set(increaseLabel, {
+                            opacity: 1
+                        });
                     }
                 }
                 productData.forEach((_, index) => positionOpportunityCards(index));
@@ -1665,61 +2484,268 @@ function animateHeroTypewriter() {
                 if (prefersReducedMotion) return;
 
                 function createProductAnimation(index) {
-                    const product = productData[index]; const productContainer = container.querySelector(`.product-container[data-index="${index}"]`); if (!productContainer) return gsap.timeline();
-                    const mainCard = productContainer.querySelector('.ticket-main-card'); const priceEl = productContainer.querySelector('.ticket-price'); const increaseLabel = productContainer.querySelector('.ticket-increase-label'); const scanEffect = productContainer.querySelector('.ai-scan-effect'); const allCards = gsap.utils.toArray(productContainer.querySelectorAll('.opportunity-card'));
+                    const product = productData[index];
+                    const productContainer = container.querySelector(`.product-container[data-index="${index}"]`);
+                    if (!productContainer) return gsap.timeline();
+                    const mainCard = productContainer.querySelector('.ticket-main-card');
+                    const priceEl = productContainer.querySelector('.ticket-price');
+                    const increaseLabel = productContainer.querySelector('.ticket-increase-label');
+                    const scanEffect = productContainer.querySelector('.ai-scan-effect');
+                    const allCards = gsap.utils.toArray(productContainer.querySelectorAll('.opportunity-card'));
                     if (!mainCard || !priceEl || !increaseLabel || !scanEffect || allCards.length === 0) return gsap.timeline();
-                    const originalTotal = product.price; const newTotal = product.opportunities.reduce((sum, op) => sum + op.price, originalTotal);
-                    positionOpportunityCards(index); gsap.set(allCards, { opacity: 0 });
+                    const originalTotal = product.price;
+                    const newTotal = product.opportunities.reduce((sum, op) => sum + op.price, originalTotal);
+                    positionOpportunityCards(index);
+                    gsap.set(allCards, {
+                        opacity: 0
+                    });
                     const tl = gsap.timeline();
-                    tl.to(productContainer, { opacity: 1, visibility: 'visible', duration: 0.4 }).from(mainCard, { scale: 0.9, opacity: 0, duration: 0.5 }, "<").addLabel("scan", "+=0.5")
-                      .to(scanEffect, { yPercent: 200, duration: 0.6, ease: 'power1.inOut' }, "scan").to(allCards, { opacity: 1, scale: 1, duration: 0.5, stagger: 0.15, ease: 'back.out(2)' }, "scan+=0.3").addLabel("merge", "+=2.0")
-                      .to(allCards, { x: () => { const m=mainCard.getBoundingClientRect(),c=allCards[0].getBoundingClientRect(),r=container.getBoundingClientRect(); return (m.left-r.left)+m.width/2-((c.left-r.left)+c.width/2); }, y: () => { const m=mainCard.getBoundingClientRect(),c=allCards[0].getBoundingClientRect(),r=container.getBoundingClientRect(); return (m.top-r.top)+m.height/2-((c.top-r.top)+c.height/2); }, scale: 0.1, opacity: 0, duration: 0.7, ease: 'power3.in', stagger: 0.08 }, "merge")
-                      .to(mainCard, { boxShadow: "0 0 35px rgba(46, 120, 243, 0.4)", duration: 0.4 }, "<")
-                      .call(() => { const counter={val:originalTotal}; gsap.to(counter, { val: newTotal, duration: 1.0, ease: 'power2.out', onUpdate: () => { priceEl.textContent=`$${Math.round(counter.val).toLocaleString()}`; const inc=((counter.val-originalTotal)/originalTotal)*100; increaseLabel.textContent=`+${inc.toFixed(1)}% Ticket Increase`; } }); }, [], ">")
-                      .to(increaseLabel, { opacity: 1, duration: 0.4 }, ">+0.2").to(mainCard, { boxShadow: "0 8px 32px rgba(0, 0, 0, 0.37)", duration: 0.4 }, ">-0.3").to(productContainer, { opacity: 0, visibility: 'hidden', duration: 0.4, delay: 2.5 });
+                    tl.to(productContainer, {
+                            opacity: 1,
+                            visibility: 'visible',
+                            duration: 0.4
+                        }).from(mainCard, {
+                            scale: 0.9,
+                            opacity: 0,
+                            duration: 0.5
+                        }, "<").addLabel("scan", "+=0.5")
+                        .to(scanEffect, {
+                            yPercent: 200,
+                            duration: 0.6,
+                            ease: 'power1.inOut'
+                        }, "scan").to(allCards, {
+                            opacity: 1,
+                            scale: 1,
+                            duration: 0.5,
+                            stagger: 0.15,
+                            ease: 'back.out(2)'
+                        }, "scan+=0.3").addLabel("merge", "+=2.0")
+                        .to(allCards, {
+                            x: () => {
+                                const m = mainCard.getBoundingClientRect(),
+                                    c = allCards[0].getBoundingClientRect(),
+                                    r = container.getBoundingClientRect();
+                                return (m.left - r.left) + m.width / 2 - ((c.left - r.left) + c.width / 2);
+                            },
+                            y: () => {
+                                const m = mainCard.getBoundingClientRect(),
+                                    c = allCards[0].getBoundingClientRect(),
+                                    r = container.getBoundingClientRect();
+                                return (m.top - r.top) + m.height / 2 - ((c.top - r.top) + c.height / 2);
+                            },
+                            scale: 0.1,
+                            opacity: 0,
+                            duration: 0.7,
+                            ease: 'power3.in',
+                            stagger: 0.08
+                        }, "merge")
+                        .to(mainCard, {
+                            boxShadow: "0 0 35px rgba(46, 120, 243, 0.4)",
+                            duration: 0.4
+                        }, "<")
+                        .call(() => {
+                            const counter = {
+                                val: originalTotal
+                            };
+                            gsap.to(counter, {
+                                val: newTotal,
+                                duration: 1.0,
+                                ease: 'power2.out',
+                                onUpdate: () => {
+                                    priceEl.textContent = `$${Math.round(counter.val).toLocaleString()}`;
+                                    const inc = ((counter.val - originalTotal) / originalTotal) * 100;
+                                    increaseLabel.textContent = `+${inc.toFixed(1)}% Ticket Increase`;
+                                }
+                            });
+                        }, [], ">")
+                        .to(increaseLabel, {
+                            opacity: 1,
+                            duration: 0.4
+                        }, ">+0.2").to(mainCard, {
+                            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.37)",
+                            duration: 0.4
+                        }, ">-0.3").to(productContainer, {
+                            opacity: 0,
+                            visibility: 'hidden',
+                            duration: 0.4,
+                            delay: 2.5
+                        });
                     return tl;
                 }
-                const mainLoop = gsap.timeline({ scrollTrigger: { trigger: dashboard3, start: 'top 75%', toggleActions: 'play pause resume reset' }, repeat: -1 }).timeScale(1.5);
+                const mainLoop = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: dashboard3,
+                        start: 'top 75%',
+                        toggleActions: 'play pause resume reset'
+                    },
+                    repeat: -1
+                }).timeScale(1.5);
                 productData.forEach((_, index) => mainLoop.add(createProductAnimation(index)));
-                allScrollTriggers.push(mainLoop.scrollTrigger); allTimelines.push(mainLoop);
+                allScrollTriggers.push(mainLoop.scrollTrigger);
+                allTimelines.push(mainLoop);
             }
 
             function setupRevolvingRing() {
-                const stage = document.querySelector('.revolving-stage'); if (!stage) return; const track = document.getElementById('revTrack'); if (!track) return;
-                const tiles = Array.from(track.querySelectorAll('.revolving-tile')); if (tiles.length === 0) return;
-                const speedTurnsPerSec = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--rev-speed')) || 0.06; const speedDegPerSec = speedTurnsPerSec * 360;
-                let rotY = 0, last = performance.now(), paused = false, inView = false;
+                const stage = document.querySelector('.revolving-stage');
+                if (!stage) return;
+                const track = document.getElementById('revTrack');
+                if (!track) return;
+                const tiles = Array.from(track.querySelectorAll('.revolving-tile'));
+                if (tiles.length === 0) return;
+                const speedTurnsPerSec = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--rev-speed')) || 0.06;
+                const speedDegPerSec = speedTurnsPerSec * 360;
+                let rotY = 0,
+                    last = performance.now(),
+                    paused = false,
+                    inView = false;
+
                 function setRingState() {
-                    const isSmallMobile = window.innerWidth < 480; const radius = isSmallMobile ? 100 : (window.innerWidth < 768 ? 120 : 160); const n = tiles.length; const step = 360 / Math.max(n, 1); const baseAngles = tiles.map((_, i) => i * step);
-                    if (!track) return; track.style.transform = `rotateY(${rotY}deg)`;
-                    tiles.forEach((tile, i) => { const a = baseAngles[i]; tile.style.transform = `translate(-50%, -50%) rotateY(${a}deg) translateZ(${radius}px)`; const content = tile.querySelector('.tile-content'); if (!content) return; content.style.transform = `rotateY(${- (rotY + a)}deg)`; const theta = (a + rotY) * Math.PI / 180; const t = (Math.cos(theta) + 1) / 2; const scaleAdjust = isSmallMobile ? 0.6 + 0.4 * t : 0.75 + 0.25 * t; const opacityAdjust = isSmallMobile ? 0.2 + 0.8 * t : 0.35 + 0.65 * t; content.style.opacity = opacityAdjust.toFixed(3); content.style.transform += ` scale(${scaleAdjust.toFixed(4)})`; tile.classList.toggle('is-back', t < 0.5); });
+                    const isSmallMobile = window.innerWidth < 480;
+                    const radius = isSmallMobile ? 100 : (window.innerWidth < 768 ? 120 : 160);
+                    const n = tiles.length;
+                    const step = 360 / Math.max(n, 1);
+                    const baseAngles = tiles.map((_, i) => i * step);
+                    if (!track) return;
+                    track.style.transform = `rotateY(${rotY}deg)`;
+                    tiles.forEach((tile, i) => {
+                        const a = baseAngles[i];
+                        tile.style.transform = `translate(-50%, -50%) rotateY(${a}deg) translateZ(${radius}px)`;
+                        const content = tile.querySelector('.tile-content');
+                        if (!content) return;
+                        content.style.transform = `rotateY(${- (rotY + a)}deg)`;
+                        const theta = (a + rotY) * Math.PI / 180;
+                        const t = (Math.cos(theta) + 1) / 2;
+                        const scaleAdjust = isSmallMobile ? 0.6 + 0.4 * t : 0.75 + 0.25 * t;
+                        const opacityAdjust = isSmallMobile ? 0.2 + 0.8 * t : 0.35 + 0.65 * t;
+                        content.style.opacity = opacityAdjust.toFixed(3);
+                        content.style.transform += ` scale(${scaleAdjust.toFixed(4)})`;
+                        tile.classList.toggle('is-back', t < 0.5);
+                    });
                 }
-                setRingState(); if (prefersReducedMotion) return;
-                stage.addEventListener('mouseenter', () => paused = true); stage.addEventListener('mouseleave', () => paused = false);
-                function tick(now) { if (!inView) { revolvingRingAnimationId = requestAnimationFrame(tick); return; } const dt = (now - last) / 1000; last = now; if (!paused) { rotY = (rotY + speedDegPerSec * dt) % 360; } setRingState(); revolvingRingAnimationId = requestAnimationFrame(tick); }
-                const st = ScrollTrigger.create({ trigger: stage, start: "top bottom", end: "bottom top", onEnter: () => { inView = true; last = performance.now(); }, onLeave: () => { inView = false; }, onEnterBack: () => { inView = true; last = performance.now(); }, onLeaveBack: () => { inView = false; } });
-                allScrollTriggers.push(st); window.addEventListener('resize', debounce(setRingState, 150)); revolvingRingAnimationId = requestAnimationFrame(tick);
+                setRingState();
+                if (prefersReducedMotion) return;
+                stage.addEventListener('mouseenter', () => paused = true);
+                stage.addEventListener('mouseleave', () => paused = false);
+
+                function tick(now) {
+                    if (!inView) {
+                        revolvingRingAnimationId = requestAnimationFrame(tick);
+                        return;
+                    }
+                    const dt = (now - last) / 1000;
+                    last = now;
+                    if (!paused) {
+                        rotY = (rotY + speedDegPerSec * dt) % 360;
+                    }
+                    setRingState();
+                    revolvingRingAnimationId = requestAnimationFrame(tick);
+                }
+                const st = ScrollTrigger.create({
+                    trigger: stage,
+                    start: "top bottom",
+                    end: "bottom top",
+                    onEnter: () => {
+                        inView = true;
+                        last = performance.now();
+                    },
+                    onLeave: () => {
+                        inView = false;
+                    },
+                    onEnterBack: () => {
+                        inView = true;
+                        last = performance.now();
+                    },
+                    onLeaveBack: () => {
+                        inView = false;
+                    }
+                });
+                allScrollTriggers.push(st);
+                window.addEventListener('resize', debounce(setRingState, 150));
+                revolvingRingAnimationId = requestAnimationFrame(tick);
             }
 
             function setupHowItWorksAnimation() {
                 const steps = gsap.utils.toArray(".step-icon");
-                steps.forEach(step => { const parent = step.parentElement; if (!parent) return; const st = ScrollTrigger.create({ trigger: parent, start: "top center", end: "bottom center", toggleClass: {targets: step, className: "is-active"}, markers: false, onToggle: self => { if (prefersReducedMotion) self.disable(); } }); allScrollTriggers.push(st); });
+                steps.forEach(step => {
+                    const parent = step.parentElement;
+                    if (!parent) return;
+                    const st = ScrollTrigger.create({
+                        trigger: parent,
+                        start: "top center",
+                        end: "bottom center",
+                        toggleClass: {
+                            targets: step,
+                            className: "is-active"
+                        },
+                        markers: false,
+                        onToggle: self => {
+                            if (prefersReducedMotion) self.disable();
+                        }
+                    });
+                    allScrollTriggers.push(st);
+                });
                 const progressLine = document.getElementById('how-it-works-progress');
-                if (progressLine && !prefersReducedMotion) { const progressContainer = document.querySelector("#how-it-works .space-y-10"); if (progressContainer) { const tl = gsap.to(progressLine, { height: "100%", ease: "none", scrollTrigger: { trigger: progressContainer, start: "top center", end: "bottom bottom-=150px", scrub: true } }); allScrollTriggers.push(tl.scrollTrigger); } }
+                if (progressLine && !prefersReducedMotion) {
+                    const progressContainer = document.querySelector("#how-it-works .space-y-10");
+                    if (progressContainer) {
+                        const tl = gsap.to(progressLine, {
+                            height: "100%",
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: progressContainer,
+                                start: "top center",
+                                end: "bottom bottom-=150px",
+                                scrub: true
+                            }
+                        });
+                        allScrollTriggers.push(tl.scrollTrigger);
+                    }
+                }
             }
 
             function setupNewHeroAnimation() {
-                const streamContainer = document.getElementById('conversation-stream'); if(!streamContainer) return;
+                const streamContainer = document.getElementById('conversation-stream');
+                if (!streamContainer) return;
                 const snippets = ["price is a bit high", "do you have this in blue?", "my wife's anniversary", "looking for something durable", "just browsing today", "competitor XYZ has it cheaper", "what's the warranty like?", "is this the latest model?", "can you hold this for me?"];
-                heroStreamTimeline = gsap.timeline({ paused: prefersReducedMotion });
-                if(streamContainer.children.length === 0){
+                heroStreamTimeline = gsap.timeline({
+                    paused: prefersReducedMotion
+                });
+                if (streamContainer.children.length === 0) {
                     for (let i = 0; i < 30; i++) {
-                        const span = document.createElement('span'); span.textContent = snippets[Math.floor(Math.random() * snippets.length)]; span.className = 'absolute text-gray-500/50 text-lg';
-                        gsap.set(span, { x: () => Math.random() * window.innerWidth, y: () => Math.random() * window.innerHeight, opacity: 0 }); streamContainer.appendChild(span);
-                        heroStreamTimeline.to(span, { duration: gsap.utils.random(15, 30), y: '-=200', opacity: gsap.utils.random(0.3, 1), ease: 'none', repeat: -1, delay: -15, modifiers: { y: y => (parseFloat(y) < -50 ? window.innerHeight + 50 : y) + 'px' } }, 0);
+                        const span = document.createElement('span');
+                        span.textContent = snippets[Math.floor(Math.random() * snippets.length)];
+                        span.className = 'absolute text-gray-500/50 text-lg';
+                        gsap.set(span, {
+                            x: () => Math.random() * window.innerWidth,
+                            y: () => Math.random() * window.innerHeight,
+                            opacity: 0
+                        });
+                        streamContainer.appendChild(span);
+                        heroStreamTimeline.to(span, {
+                            duration: gsap.utils.random(15, 30),
+                            y: '-=200',
+                            opacity: gsap.utils.random(0.3, 1),
+                            ease: 'none',
+                            repeat: -1,
+                            delay: -15,
+                            modifiers: {
+                                y: y => (parseFloat(y) < -50 ? window.innerHeight + 50 : y) + 'px'
+                            }
+                        }, 0);
                     }
                 }
-                if (!prefersReducedMotion) { const st = ScrollTrigger.create({ trigger: "#hero", start: "top bottom", end: "bottom top", onEnter: () => heroStreamTimeline && heroStreamTimeline.play(), onLeave: () => heroStreamTimeline && heroStreamTimeline.pause(), onEnterBack: () => heroStreamTimeline && heroStreamTimeline.play(), onLeaveBack: () => heroStreamTimeline && heroStreamTimeline.pause() }); allScrollTriggers.push(st); }
+                if (!prefersReducedMotion) {
+                    const st = ScrollTrigger.create({
+                        trigger: "#hero",
+                        start: "top bottom",
+                        end: "bottom top",
+                        onEnter: () => heroStreamTimeline && heroStreamTimeline.play(),
+                        onLeave: () => heroStreamTimeline && heroStreamTimeline.pause(),
+                        onEnterBack: () => heroStreamTimeline && heroStreamTimeline.play(),
+                        onLeaveBack: () => heroStreamTimeline && heroStreamTimeline.pause()
+                    });
+                    allScrollTriggers.push(st);
+                }
                 allTimelines.push(heroStreamTimeline);
             }
 
@@ -1727,19 +2753,20 @@ function animateHeroTypewriter() {
             function initializePage() {
                 setupMobileMenu();
                 setupSmoothScroll();
+
                 function checkFeather() {
-                     // FIX: Add check inside checkFeather before calling replace
+                    // FIX: Add check inside checkFeather before calling replace
                     if (typeof feather !== 'undefined' && feather && typeof feather.replace === 'function') {
                         try {
                             feather.replace();
                             console.log("Feather icons replaced.");
                             // Now safe to run functions depending on feather
-                             setupFeatureAnimations(); 
-                             setupHowItWorksAnimation();
-                        } catch(e) {
-                             console.error("Error calling feather.replace():", e);
+                            setupFeatureAnimations();
+                            setupHowItWorksAnimation();
+                        } catch (e) {
+                            console.error("Error calling feather.replace():", e);
                         }
-                    } else { 
+                    } else {
                         console.log("Feather not ready, checking again...");
                         setTimeout(checkFeather, 50); // Check again
                     }
@@ -1752,28 +2779,86 @@ function animateHeroTypewriter() {
 
             // --- Event Listeners ---
             window.addEventListener('resize', debounce(() => ScrollTrigger.refresh(), 250));
-            
-            // FIX: Changed from 'load' to use the already existing DOMContentLoaded + setTimeout
-            // This ensures initializePage runs after init has successfully checked/registered GSAP
-            // window.addEventListener('load', () => { // REMOVED THIS
-                const preloader = document.getElementById('preloader');
-                if (preloader) {
-                    // Fade out preloader *after* ensuring init ran and hopefully animations are set up
-                    gsap.to(preloader, { 
-                        opacity: 0, 
-                        duration: 0.8, 
-                        ease: "power2.inOut", 
-                        delay: 0.2, // Small delay after init
-                        onComplete: () => { 
-                            preloader.style.display = 'none'; 
-                        } 
-                    });
-                } 
-                initializePage(); // Call the main init function now inside the successful init()
-            // }); // REMOVED THIS
 
+            // --- Start of Final Corrected Preloader Logic Replacement (Lines ~1032-1080) ---
+
+            const preloader = document.getElementById('preloader');
+            if (preloader && !prefersReducedMotion) {
+
+                // Get all the words
+                const words = gsap.utils.toArray('.preloader-word');
+
+                if (words.length === 4) {
+
+                    const preloaderTl = gsap.timeline();
+
+                    // --- UPDATED: Faster timings ---
+                    const inOutTime = 0.2; // How long to fade/move in or out (Was 0.3)
+                    const holdTime = 0.15; // How long each word is held (Was 0.25)
+
+                    // Helper function to create one word's animation
+                    const animateWord = (el) => {
+                        const tl = gsap.timeline();
+
+                        // 1. Fade IN (from 0% opacity, 20px down)
+                        tl.to(el, {
+                                opacity: 1,
+                                transform: "translateY(0px)",
+                                duration: inOutTime,
+                                ease: "power2.out"
+                            })
+                            // 2. HOLD
+                            .addLabel("hold", `+=${holdTime}`)
+                            // 3. Fade OUT (to 0% opacity, -20px up)
+                            .to(el, {
+                                opacity: 0,
+                                transform: "translateY(-20px)",
+                                duration: inOutTime,
+                                ease: "power2.in"
+                            }, "hold"); // Start the 'out' animation at the 'hold' label
+
+                        return tl;
+                    };
+
+                    // --- Run the sequence ---
+                    preloaderTl.add(animateWord(words[0]));
+
+                    // This is the key: We overlap the animations.
+                    // We start the next word's animation *exactly* when the
+                    // previous word's "out" animation begins.
+                    // The offset is -inOutTime (the duration of the out animation).
+                    preloaderTl.add(animateWord(words[1]), `-=${inOutTime}`);
+                    preloaderTl.add(animateWord(words[2]), `-=${inOutTime}`);
+                    preloaderTl.add(animateWord(words[3]), `-=${inOutTime}`);
+
+                    // 3. Finally, fade out the preloader element itself
+                    preloaderTl.to(preloader, {
+                        opacity: 0,
+                        duration: 0.4, // Fast fade out
+                        ease: "power2.inOut",
+                        onComplete: () => {
+                            preloader.style.display = 'none';
+                        }
+                    }, "-=0.2"); // Overlap with the last word's exit
+
+                    allTimelines.push(preloaderTl);
+
+                } else {
+                    // Fallback for safety
+                    gsap.to(preloader, {
+                        opacity: 0,
+                        duration: 0.5,
+                        onComplete: () => preloader.style.display = 'none'
+                    });
+                }
+
+            } else if (preloader) {
+                // Fallback for 'prefersReducedMotion' users
+                preloader.style.display = 'none';
+            }
+
+            initializePage(); // Call the main init function now inside the successful init()
         }
     </script>
 </body>
 </html>
-
