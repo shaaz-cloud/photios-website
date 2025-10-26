@@ -2,6 +2,17 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+    <script>
+        // Force scroll to top on refresh
+        if (history.scrollRestoration) {
+            // This is the modern way to prevent scroll restoration
+            history.scrollRestoration = 'manual';
+        }
+        // Fallback for older browsers
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWJXDPQTJC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -1128,7 +1139,7 @@
                                 Offline retail is a black box. Insights are lost the moment a customer leaves.
                             </p>
                             <div id="questions-list" class="space-y-4 max-w-md mx-auto lg:mx-0 gsap-reveal" data-gsap-delay="0.2">
-                                <p class="text-lg font-semibold text-gray-200">"Does my sales staff follow SOPs while pitching?"</p>
+                                <p class="text-lg font-semibold text-gray-200">"Why did the customer walkout without buying?"</p>
                                 <p class="text-lg font-semibold text-gray-200">"Does my sales staff follow the ideal pitch during ALL customer conversations?"</p>
                                 <p class="text-lg font-semibold text-gray-200">"What more can I do to meet my monthly target?"</p>
                                 <p class="text-lg font-semibold text-gray-200">"What is the real customer feedback during purchase process?"</p>
@@ -1145,7 +1156,7 @@
                                         </div>
                                     </div>
                                     <div id="insight-card-1" class="insight-card p-4">
-                                        <p class="text-xs text-gray-400 font-medium">SOP Adherance</p>
+                                        <p class="text-xs text-gray-400 font-medium">SOP Adherence</p>
                                         <div class="flex items-center gap-4 mt-2">
                                             <div class="w-full bg-gray-700 rounded-full h-2.5">
                                                 <div class="progress-bar bg-blue-500 h-2.5 rounded-full" style="width: 0%"></div>
